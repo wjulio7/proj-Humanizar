@@ -12,7 +12,7 @@ module.exports = {
 	uf
     } = request.body;
     await connection('vendedor').insert({
-        name,
+    name,
 	password,
 	cpf,
 	rg,
@@ -22,7 +22,7 @@ module.exports = {
 	uf
     })
     //aqui serve pra retornar alguma coisa
-    return response.json({})
+    return response.json({name})
 
     }
 };
