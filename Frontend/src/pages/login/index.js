@@ -3,6 +3,7 @@ import {Link, useHistory} from 'react-router-dom'
 
 import api from '../../services/api'
 import './styles.css'
+
 export default function Login() {
     const [cpf, setCpf] = useState('')
     const [password, setpassword] = useState('')
@@ -14,7 +15,7 @@ export default function Login() {
         try{
             const response = await api.post('loginVendedorController', {cpf, password})
             //armazenando o id na sessão
-            localStorage.setItem('cpf',cpf)
+            localStorage.setItem('userCpf',cpf)
             localStorage.setItem('userName', response.data.name)
             history.push('/profile')
         }catch (err) {

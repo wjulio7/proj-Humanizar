@@ -38,12 +38,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mozoleu\Documents\projeto2\Webell\frontend\src" />
       <recent name="C:\Users\mozoleu\Documents\projeto2\Webell\frontend\src\pages" />
     </key>
   </component>
@@ -59,7 +63,7 @@
       <updated>1588770306326</updated>
       <workItem from="1588770310433" duration="1672000" />
       <workItem from="1588772036461" duration="5575000" />
-      <workItem from="1588780873287" duration="575000" />
+      <workItem from="1588780873287" duration="8839000" />
     </task>
     <servers />
   </component>
@@ -79,9 +83,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="508" y="272" key="#ESLint" timestamp="1588787068254">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="508" y="272" key="#ESLint/0.0.1280.760@0.0.1280.760" timestamp="1588787068254" />
     <state x="141" y="25" key="SettingsEditor" timestamp="1588771917675">
       <screen x="0" y="0" width="1280" height="760" />
     </state>
     <state x="141" y="25" key="SettingsEditor/0.0.1280.760@0.0.1280.760" timestamp="1588771917675" />
+    <state x="296" y="170" key="run.anything.popup" timestamp="1588787502540">
+      <screen x="0" y="0" width="1280" height="760" />
+    </state>
+    <state x="296" y="170" key="run.anything.popup/0.0.1280.760@0.0.1280.760" timestamp="1588787502540" />
   </component>
 </project>

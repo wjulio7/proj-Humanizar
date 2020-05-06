@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Login from './pages/login'
 import Register from "./pages/register";
 import Profile from "./pages/profile";
+import NewProduct from "./pages/newProduct";
 
 export default function Routes(){
     return(
@@ -12,6 +13,7 @@ export default function Routes(){
                 <Route path="/" exact component={Login}/>
                 <Route path="/register" exact component={Register}/>
                 <Route path="/profile" exact component={Profile}/>
+                <Route path="/newproduct" exact component={NewProduct}/>
 
             </Switch>
         </BrowserRouter>
