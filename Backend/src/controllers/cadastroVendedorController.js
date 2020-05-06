@@ -9,7 +9,8 @@ module.exports = {
 	email,
 	whatsapp,
 	city,
-	uf
+	uf,
+	image
     } = request.body;
     await connection('vendedor').insert({
     name,
@@ -19,7 +20,8 @@ module.exports = {
 	email,
 	whatsapp,
 	city,
-	uf
+	uf,
+	image
     })
     //aqui serve pra retornar alguma coisa
     return response.json({name})

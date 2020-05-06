@@ -3,6 +3,7 @@ exports.up = function (knex) {
     return knex.schema.createTable('product', function (table) {
         table.increments();
         table.string('name').notNullable();
+        table.binary('image').notNullable();
         table.string('description').notNullable();;
         table.decimal('value').notNullable();
 

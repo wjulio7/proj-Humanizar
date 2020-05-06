@@ -9,13 +9,14 @@ module.exports = {
 
 
     async create(request, response) {
-        const { name, description, value } = request.body;
+        const { name, image, description, value } = request.body;
         request.headers;
 
         const vendedor_id = request.headers.authorization;
 
         const [id] = await connection('product').insert({
             name,
+            image,
             description,
             value,
             vendedor_id,
