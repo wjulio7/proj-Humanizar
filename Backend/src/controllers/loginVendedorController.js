@@ -3,12 +3,12 @@ const connection = require('../database/conection');
 module.exports = {
     async create(request, response) {
         //campos preenchidos na hora do login
-      const { name, password } = request.body;
+      const { cpf, password } = request.body;
   
       const vendedor = await connection('vendedor')
-        .where('name', name)
+        .where('cpf', cpf)
         .where('password', password)
-        .select('id')
+        .select('name')
         .first();
   
       if (!vendedor) {
