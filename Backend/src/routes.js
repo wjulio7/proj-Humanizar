@@ -15,7 +15,7 @@ routes.post('/cadastroClienteController', cadastroClienteController.create);
 routes.post('/loginVendedorController', loginVendedorController.create);
 routes.post('/loginClienteController', loginClienteController.create);
 
-routes.get('/produtos', produtoController.index);
+routes.get('/produtoslistar', produtoController.index);
 routes.post('/produtoController', produtoController.create);
 routes.delete('/produtos/:id', produtoController.delete);
 
