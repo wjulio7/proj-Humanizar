@@ -23,7 +23,20 @@ export default function Profile() {
         })
     }, [userCpf]);//vazio executa uma unica vez
 
-
+    async function handleDeleteIncident(id){
+        try{
+            await api.delete(`/produtos/${id}`,{
+                headers:{
+                    Authorization: userCpf,
+                }
+            })
+            //pega todos os incidents e filtra, mostrando os ids que sao diferentes dos que foram deletados
+            //fazendo sumir para o usuario os incidents deletados
+            setProdutos(produtos.filter(produto => produto.id !== id));
+        }catch (err) {
+            alert('Erro ao deletar caso, tente novamente.')
+        }
+    }
     function handleLogout() {
         localStorage.clear()
         history.push('/')
@@ -53,7 +66,9 @@ export default function Profile() {
                         <p>{produto.whatsapp}</p>
                         <p>{produto.city}</p>
                         <p>{produto.uf}</p>
-
+                        <button onClick={() => handleDeleteIncident(produto.id) } type="button">
+                            <FiTrash2 size={20} color="#a8ab3"/>
+                        </button>
                     </li>
                 ))}
             </ul>
