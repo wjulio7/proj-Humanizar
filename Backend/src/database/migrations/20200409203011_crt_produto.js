@@ -8,7 +8,7 @@ exports.up = function (knex) {
 
         table.string('vendedor_id').notNullable();
 
-        table.foreign('vendedor_id').references('id').inTable('vendedor');
+        table.foreign('vendedor_id').references('cpf').inTable('vendedor');
     });
 };
 
