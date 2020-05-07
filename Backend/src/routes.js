@@ -1,7 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 
-const multer  = require('multer');
+const multer = require('multer');
+const path = require('path');
 
 
 const cadastroVendedorController = require('./controllers/cadastroVendedorController');
@@ -12,7 +13,20 @@ const loginClienteController = require('./controllers/loginClienteController');
 
 const produtoController = require('./controllers/produtoController');
 
-const upload = multer({ dest: 'uploads/' });
+//upload com nome da imagem
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    // nome do arquivo-data em milisegundos- extensão do arquivo
+    cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
+
+//const upload = multer({ dest: 'uploads/' });
 
 routes.post('/cadastroVendedorController', cadastroVendedorController.create);
 routes.post('/cadastroClienteController', cadastroClienteController.create);
