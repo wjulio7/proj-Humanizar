@@ -27,10 +27,10 @@ module.exports = {
 
 
     async create(request, response) {
-        const { name, image, description, value } = request.body;
-        request.headers; request.file;
+        const { name, description, value } = request.body;
+        request.headers; //request.file;
 
-
+        const { originalname: image } = request.file;
 
         const vendedor_id = request.headers.authorization;
 
