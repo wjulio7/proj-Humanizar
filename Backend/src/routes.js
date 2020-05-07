@@ -1,6 +1,10 @@
 const express = require('express');
 const routes = express.Router();
 
+const multer = require('multer');
+const path = require('path');
+
+
 const cadastroVendedorController = require('./controllers/cadastroVendedorController');
 const cadastroClienteController = require('./controllers/cadastroClienteController');
 
@@ -9,6 +13,21 @@ const loginClienteController = require('./controllers/loginClienteController');
 
 const produtoController = require('./controllers/produtoController');
 
+//upload com nome da imagem
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    // nome do arquivo-data em milisegundos- extensão do arquivo
+    cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
+
+//const upload = multer({ dest: 'uploads/' });
+
 routes.post('/cadastroVendedorController', cadastroVendedorController.create);
 routes.post('/cadastroClienteController', cadastroClienteController.create);
 
@@ -16,8 +35,8 @@ routes.post('/loginVendedorController', loginVendedorController.create);
 routes.post('/loginClienteController', loginClienteController.create);
 
 routes.get('/produtoslistar', produtoController.index);
-routes.post('/produtoController', produtoController.create);
-routes.delete('/produtos/:id', produtoController.delete);
+routes.post('/produtoController', upload.single('image'), produtoController.create);
+routes.delete('/produto/:id', produtoController.delete);
 
 
 
