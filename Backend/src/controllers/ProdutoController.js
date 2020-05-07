@@ -1,5 +1,6 @@
 const connection = require('../database/conection');
 
+
 module.exports = {
     async index(request, response){
         const{page = 1} = request.query
@@ -27,7 +28,9 @@ module.exports = {
 
     async create(request, response) {
         const { name, image, description, value } = request.body;
-        request.headers;
+        request.headers; request.file;
+
+
 
         const vendedor_id = request.headers.authorization;
 
