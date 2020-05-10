@@ -9,7 +9,7 @@
 
 body{
     font: 400 14px Roboto, sans-serif;/* sans-serif é para de queda do google.*/
-    background: #1010115d;
+    background: #dcdce9c4;
     -webkit-font-smoothing: antialiased;/*antialiased melhora a visualização */
 }
 
@@ -44,6 +44,18 @@ form input{/*Formulário*/
     border: 1px solid #9b9ba7;
     border-radius: 8px;
     padding: 0 24px;
+}
+
+form textarea{/*Caixa de descrição*/
+    width: 100%;
+    resize: vertical;/*Aumenta a área de texto apenas na vertical*/
+    min-height: 140px;
+    height: 60px;
+    color: #333;
+    border: 1px solid #9b9ba7;
+    border-radius: 8px;
+    padding: 16px 24px;
+    line-height: 24px;/*tamanho das linhas*/
 }
 
 /*Estilizar o link */
