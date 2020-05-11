@@ -23,8 +23,30 @@ const storage = multer.diskStorage({
     cb(null, file.originalname + '-' + Date.now() + path.extname(file.originalname));
   }
 });
+const upload = multer({
+  storage: storage,
+  limits: {
+    //valor da imagem em bytes/ imagem limitada a 5 MB
+    fileSize: 1024 * 1024 * 5
+  },
+  //fileFilter: fileFilter
+});
 
-const upload = multer({ storage: storage });
+// filtro de tipo de  imagens que poderam ter postadas
+fileFilter: (req, file, cb) => {
+  const allowedMimes = [
+    "image/jpeg",
+    "image/pjpeg",
+    "image/png",
+  ];
+
+  if (allowedMimes.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(new Error("Invalid file type."));
+  }
+}
+
 
 //const upload = multer({ dest: 'uploads/' });
 
