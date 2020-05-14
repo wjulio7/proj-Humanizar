@@ -1,5 +1,0 @@
-modules
-
-Knex
-Express
-nodemon
