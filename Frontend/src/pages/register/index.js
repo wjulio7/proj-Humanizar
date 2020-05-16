@@ -1,7 +1,9 @@
 import React,{useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
-
-import api from '../../services/api'
+import { FiArrowLeft } from 'react-icons/fi';//importa o botão de voltar
+import './styles.css';
+import api from '../../services/api';
+import logoImg from '../../assets/bar.png';
 
 export default function Register() {
     const[cpf, setCpf] = useState('')
@@ -9,6 +11,7 @@ export default function Register() {
     const[imgVendName,setimgVendName] = useState('defaultperfilimage.jpg')
     const[name, setName] = useState('')
     const[password, setPassword] = useState('')
+    const[confirmPassword,setConfirmPassword]=useState('')
     const[rg, setRg] = useState('')
     const[email, setEmail] = useState('')
     const[whatsapp, setWhatsapp] = useState('')
@@ -26,6 +29,7 @@ export default function Register() {
             imgVendName,
             name,
             password,
+            confirmPassword,
             rg,
             email,
             whatsapp,
@@ -42,7 +46,18 @@ export default function Register() {
     }
 
     return(
-        <div>
+        <div className="register-container">
+            <div className="content">
+            <section>
+            <img src={logoImg} alt="Barganhar" />
+            <h1>Cadastro</h1>
+            <p>Realize aqui o seu cadastro como vendedor.</p>
+
+            <Link className="back-link" to="/">{/*Chamando o estilo da class back-link*/}
+                <FiArrowLeft size={16} color="#E02041"/>
+                Não, já possuo cadastro
+            </Link>
+        </section>
             <form onSubmit={handleRegistrer}>
                 <input placeholder="Nome"
                        value={name} // função reduzida
@@ -52,7 +67,13 @@ export default function Register() {
                 />
                 <input placeholder="Senha"
                        value={password} // função reduzida
+                       type="password"
                        onChange={e=> setPassword(e.target.value)}
+                />
+                <input placeholder="Confrimar Senha"
+                       value={confirmPassword} // função reduzida
+                       type="password"
+                       onChange={e=> setConfirmPassword(e.target.value)}
                 />
                 <input placeholder="Cpf"
                        value={cpf} // função reduzida
@@ -80,6 +101,7 @@ export default function Register() {
 
                 <button className="button" type="submit">Cadastrar</button>
             </form>
+            </div>
         </div>
     )
 }

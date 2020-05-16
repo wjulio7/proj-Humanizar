@@ -3,9 +3,9 @@ import {Link, useHistory} from 'react-router-dom'
 import {FiPower, FiTrash2} from "react-icons/fi";
 
 import {storage} from '../../firebase/index'
-
-import api from '../../services/api'
-import './styles.css'
+import logoImg from '../../assets/bar.png';
+import api from '../../services/api';
+import './styles.css';
 
 export default function Profile() {
 
@@ -109,40 +109,45 @@ export default function Profile() {
             })
     }
     return (
-        <div >
+        <div className="profile-container">
             <header>
-                <span>Bem vindo {userName} </span>
                 <img src={userUrl} width={100} height={100}/>
-                <input  type="file" placeholder="Digite seu cpf" onChange={handleChange}/>
-                <button className="button" type="submit" onClick={handleNewProfilePicture} >Enviar</button>
-
+                <span>Bem vindo {userName} </span>
                 <Link className="button" to="/newproduct">Cadastrar Produto</Link>
+            <button className="buttonPower"> <Link to="/"><FiPower size={18}  color="#FFF"/> </Link></button>  
             </header>
-            <button onClick={handleLogout} type="button">
-                <FiPower  size={18} color="#E02041"/>
-            </button>
+            <section className="rec">
+                <input  type="file" onChange={handleChange}/>
+                <button className="button" type="submit" onClick={handleNewProfilePicture} >Enviar</button>
+            </section>
+            
             <ul>
                 {produtos.map(produto => (
                     <li key={produto.id}>
                         <strong>Produto:</strong>
+                        <img src={produto.url}/>
+                        
+                        
                         <p>{produto.title}</p>
-                        <strong>Descrição</strong>
-                        <p>{produto.description}</p>
+                       
                         <strong>Valor</strong>
                         <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produto.value)}</p>
                         <strong>Contato do Vendedor</strong>
-                        <p>{produto.email}</p>
-                        <p>{produto.whatsapp}</p>
-                        <p>{produto.city}</p>
-                        <p>{produto.uf}</p>
-                        <p>{produto.imgname}</p>
-                        <img src={produto.url}/>
+                        <p>Email: {produto.email}</p>
+                        <p>Whatsapp: {produto.whatsapp}</p>
+                        <p>Cidade: {produto.city}</p>
+                        <p>Uf: {produto.uf}</p>
+                        
+                        <strong>Descrição</strong>
+                        <textarea>{produto.description}</textarea>
+                        
                         <button onClick={() => handleDeleteIncident(produto.id, produto.imgname) } type="button">
-                            <FiTrash2 size={20} color="#a8ab3"/>
+                            <FiTrash2 size={20} color="#152cad"/>
                         </button>
+                        
                     </li>
                 ))}
             </ul>
-        </div>
+            </div>
     )
 }

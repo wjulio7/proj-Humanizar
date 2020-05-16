@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
-
+import tendaImg from '../../assets/prop.png';//TendaImg variável que recebe a imagem.
+import logoImg from '../../assets/bar.png';
+import{ FiLogIn} from 'react-icons/fi';//Importando ícone de login.
 import api from '../../services/api'
 import './styles.css'
 
@@ -27,19 +29,30 @@ export default function Login() {
     }
 
     return(
-        <div>
+        <html>
+            <meta name="viewport" content="width=device-width"></meta>
+        <div className="login-container">
+            
+            <section className="form">
+            <img src={logoImg} alt="logo" />
             <form onSubmit={handleLogin}>
-                <h1>Faça seu logon</h1>
+                <h1>Faça seu login</h1>
                 <input placeholder="Digite seu cpf"
                        value={cpf}
                        onChange={e=> setCpf(e.target.value)}/>
-                <input placeholder="Digite sua Senha"
+                <input placeholder="Digite sua Senha" type="password"
                        value={password}
                        onChange={e=> setpassword(e.target.value)}/>
 
                 <button className="button" type="submit">Entrar</button>
-
+                <Link className="back-link" to="/register">{/*Chamando o estilo da class back-link*/}
+                <FiLogIn size={16} color="#E02041"/>
+                Não tenho cadastro
+            </Link>
             </form>
+            </section>
+            <img src={tendaImg} alt="Tenda"/>{/*Dentro de chaves a variável */}
         </div>
+        </html>
     )
 }
