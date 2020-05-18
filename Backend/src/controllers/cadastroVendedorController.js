@@ -2,12 +2,12 @@ const connection = require('../database/conection');
 module.exports = {
     async create(request, response){
     // acessando corpo da requisição
-    const {cpf, url, imgVendName, name, password, rg, email, whatsapp, city, uf} = request.body;
+    const {cpf, urlImgVend, imgVendName, nameVend, password, rg, email, whatsapp, city, uf} = request.body;
     await connection('vendedor').insert({
 	cpf,
-	url,
+	urlImgVend,
 	imgVendName,
-	name,
+	nameVend,
 	password,
 	rg,
 	email,
@@ -16,7 +16,7 @@ module.exports = {
 	uf
     })
     //aqui serve pra retornar alguma coisa
-    return response.json({name})
+    return response.json({nameVend})
 
     }
 };

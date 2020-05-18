@@ -18,8 +18,8 @@ export default function Login() {
             const response = await api.post('loginVendedorController', {cpf, password})
             //armazenando o id na sessão
             localStorage.setItem('userCpf',cpf)
-            localStorage.setItem('userName', response.data.name)
-            localStorage.setItem('userurl', response.data.url)
+            localStorage.setItem('userName', response.data.nameVend)
+            localStorage.setItem('userurl', response.data.urlImgVend)
             localStorage.setItem('actualNameProfilePicture', response.data.imgVendName)
 
             history.push('/profile')

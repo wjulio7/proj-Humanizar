@@ -13,7 +13,8 @@ module.exports = {
         .offset((page -1 ) *5)
         .select([
             'product.*',
-            'vendedor.name',
+            'vendedor.nameVend',
+            'vendedor.urlImgVend',
             'vendedor.imgVendName',
             'vendedor.email',
             'vendedor.whatsapp',
@@ -24,13 +25,13 @@ module.exports = {
         return response.json(product);
     },
     async create(request, response) {
-        const { name, imgname, url, description, value } = request.body;
+        const { nameProd, imgProdName, urlImgProd, description, value } = request.body;
         const vendedor_id = request.headers.authorization;
 
         const [id] = await connection('product').insert({
-            name,
-            imgname,
-            url,
+            nameProd,
+            imgProdName,
+            urlImgProd,
             description,
             value,
             vendedor_id,

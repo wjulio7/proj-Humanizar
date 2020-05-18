@@ -7,9 +7,9 @@ import logoImg from '../../assets/bar.png';
 
 export default function Register() {
     const[cpf, setCpf] = useState('')
-    const[url,setUrl] = useState('https://firebasestorage.googleapis.com/v0/b/webell.appspot.com/o/defaultimg%2Fdefaultperfilimage.jpg?alt=media&token=f7afd2c7-0f73-4761-ad20-7db777d009f7')
+    const[urlImgVend,seturlImgVend] = useState('https://firebasestorage.googleapis.com/v0/b/webell.appspot.com/o/defaultimg%2Fdefaultperfilimage.jpg?alt=media&token=f7afd2c7-0f73-4761-ad20-7db777d009f7')
     const[imgVendName,setimgVendName] = useState('defaultperfilimage.jpg')
-    const[name, setName] = useState('')
+    const[nameVend, setnameVend] = useState('')
     const[password, setPassword] = useState('')
     const[confirmPassword,setConfirmPassword]=useState('')
     const[rg, setRg] = useState('')
@@ -25,9 +25,9 @@ export default function Register() {
 
         const data = {
             cpf,
-            url,
+            urlImgVend,
             imgVendName,
-            name,
+            nameVend,
             password,
             confirmPassword,
             rg,
@@ -38,7 +38,7 @@ export default function Register() {
         };
         try{//enviando dados, o response e a resposta que foi cadastrado
             const response = await api.post('cadastroVendedorController',data)
-            alert(`Bem Vindo ${response.data.name}`)
+            alert(`Bem Vindo ${response.data.nameVend}`)
             history.push('/')
         }catch (err) {
             alert('Erro no cadastro, tente novamente')
@@ -60,8 +60,8 @@ export default function Register() {
         </section>
             <form onSubmit={handleRegistrer}>
                 <input placeholder="Nome"
-                       value={name} // função reduzida
-                       onChange={e=> setName(e.target.value)}//e é o evento de mudança
+                       value={nameVend} // função reduzida
+                       onChange={e=> setnameVend(e.target.value)}//e é o evento de mudança
                     //o target e o valor do input,
                     //o e é o parametro da função
                 />

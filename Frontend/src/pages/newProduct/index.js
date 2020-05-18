@@ -10,10 +10,10 @@ import api from '../../services/api'
 
 export default function NewProduct() {
 
-    const[name, setName] = useState('')
+    const[nameProd, setnameProd] = useState('')
     const[description, setDescription] = useState('')
     const[value, setValue] = useState('')
-    const [url, setUrl] = useState("")
+    //const [urlImgProd, seturlImgProd] = useState("")
 
     const [image, setImage] = useState("");
 
@@ -28,9 +28,9 @@ export default function NewProduct() {
     }
     async function handleNewProduct(e) {
         e.preventDefault()
-        const imgname = Math.random()+image.name
+        const imgProdName = Math.random()+image.name
 
-        const UploadTask = storage.ref(`images/${imgname}`).put(image)//put faz o upload
+        const UploadTask = storage.ref(`images/${imgProdName}`).put(image)//put faz o upload
         UploadTask.on("state_changed",
             snapshot => {},//this basicaly indicate the current progress of file upload
             error => {
@@ -39,16 +39,15 @@ export default function NewProduct() {
             () => {
                 storage
                     .ref("images")
-                    .child(imgname)
+                    .child(imgProdName)
                     .getDownloadURL()//the url of thefile that we uploaded to firebase
-                    .then(url =>{
-                        setUrl(url)
+                    .then(urlImgProd =>{
                         const data = {
-                            name,
+                            nameProd,
                             description,
                             value,
-                            url,
-                            imgname
+                            urlImgProd,
+                            imgProdName
                         };
                         api.post('produtoController', data,{
                             headers: {
@@ -74,8 +73,8 @@ export default function NewProduct() {
         </section>
             <form onSubmit={handleNewProduct}>
                 <input placeholder="Nome do Produto"
-                       value={name}
-                       onChange={e=> setName(e.target.value)} maxLength="30"/>
+                       value={nameProd}
+                       onChange={e=> setnameProd(e.target.value)} maxLength="30"/>
                 <textarea placeholder="Descrição do Produto"
                        value={description}
                        onChange={e=> setDescription(e.target.value)} maxLength="160"/>

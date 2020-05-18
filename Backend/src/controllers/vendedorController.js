@@ -1,19 +1,13 @@
 const connection = require('../database/conection');
-
 module.exports = {
-
     async index(request, response){
 
         const vendedor = await connection('vendedor')
             .select([
-
-                'vendedor.url'
+                'vendedor.urlImgVend'
             ]);
-
         return response.json(vendedor);
     },
-
-
 
 async alter(request, response) {
     const {  url, imgVendName } = request.body;
@@ -21,7 +15,7 @@ async alter(request, response) {
 
     const vendedor = await connection('vendedor')
         .where('cpf', cpf)
-        .update('url',url)
+        .update('urlImgVend',url)
         .update('imgVendName',imgVendName)
     return response.json({ vendedor });
 }

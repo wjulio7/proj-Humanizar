@@ -8,7 +8,7 @@ module.exports = {
       const vendedor = await connection('vendedor')
         .where('cpf', cpf)
         .where('password', password)
-        .select('name','url','imgVendName')
+        .select('nameVend','urlImgVend','imgVendName')
         .first();
   
       if (!vendedor) {

@@ -18,11 +18,8 @@ export default function Profile() {
 
     const [image, setImage] = useState("");
 
-
-
     const history = useHistory()
     const storageRef = storage.ref();
-
 
     useEffect(() => {
         api.get('produtoslistar',{
@@ -34,7 +31,6 @@ export default function Profile() {
         })
     }, [userCpf]);//vazio executa uma unica vez
 
-
     function handleDeleteOldPicture(){
         const desertRef = storageRef.child(`images/${actualNameProfilePicture}`);
         desertRef.delete().then(function() {
@@ -44,9 +40,9 @@ export default function Profile() {
         })
     }
 
-    async function handleDeleteIncident(id, imgname){
+    async function handleDeleteIncident(id, imgProdName){
         try{
-            const desertRef = storageRef.child(`images/${imgname}`);
+            const desertRef = storageRef.child(`images/${imgProdName}`);
             desertRef.delete().then(function() {
                 // File deleted successfully
             }).catch(function(error) {
@@ -96,7 +92,7 @@ export default function Profile() {
                         setactualNameProfilePicture(imgVendName)
                         setUserurl(url)
                         const data = {
-                            url,
+                            url,                            
                             imgVendName
                         };
                         api.post('vendedorinfoalter', data,{
@@ -126,8 +122,7 @@ export default function Profile() {
                 {produtos.map(produto => (
                     <li key={produto.id}>
                         <strong>Produto:</strong>
-                        <img src={produto.url}/>
-                        
+                        <img src={produto.urlImgProd}/>
                         
                         <p>{produto.title}</p>
                        
@@ -142,10 +137,9 @@ export default function Profile() {
                         <strong>Descrição</strong>
                         <textarea>{produto.description}</textarea>
                         
-                        <button onClick={() => handleDeleteIncident(produto.id, produto.imgname) } type="button">
+                        <button onClick={() => handleDeleteIncident(produto.id, produto.imgProdName) } type="button">
                             <FiTrash2 size={20} color="#152cad"/>
                         </button>
-                        
                     </li>
                 ))}
             </ul>
