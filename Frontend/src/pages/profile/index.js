@@ -117,7 +117,8 @@ export default function Profile() {
             <button className="buttonPower"> <Link to="/"><FiPower size={18}  color="#FFF"/> </Link></button>  
             </header>
             <section className="rec">
-                <input  type="file" onChange={handleChange}/>
+               <label for="foto ">Foto de perfil
+               <input  type="file" className="foto" onChange={handleChange}/></label>
                 <button className="button" type="submit" onClick={handleNewProfilePicture} >Enviar</button>
             </section>
             
