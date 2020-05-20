@@ -12,22 +12,24 @@
 .login-container img{
     border: 10px #ffffff;
     max-width: 700px;
-    max-height: 700px;
+    max-height: 900px;
     margin-left: 50px;
 }
 /*Formulário */
 .login-container section.form{/*delimitar tamanho*/
-width:90%;/*Largura */
+width:70%;/*Largura */
 max-width: 350px;/* Largura máxima */
-margin-top: 1px;
+
 }
 .login-container section.form img{
-    align-items: center;
-    margin-left: 70px;
+    max-width: 400px;
+    max-height: 320px;
+    margin-left: 15px;
+   
 }
 /*Estilizar formulário*/
 .login-container section.form form{
-    margin-top: 10px;
+    margin-bottom: 200px;
 }
 /*Estilizar fonte e imagem */
 .login-container section.form form h1{

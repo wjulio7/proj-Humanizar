@@ -34,6 +34,7 @@ input, button, textarea{
     font-size: 18px;
     line-height: 60px;
     transition: filter 0.2s;/*Duração de transição */
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.479);
 }
 .button:hover{
     filter: brightness(90%);/*Opacidade ao passar */
@@ -47,6 +48,8 @@ form input{/*Formulário*/
     border-radius: 22px;
     padding: 0 24px;
     margin-top: 6px;
+    
+    
 }
 
 form textarea{/*Caixa de descrição*/

@@ -22,13 +22,14 @@
 }
 
 .new-incident-container .content section{
-    width:100%;
+    width:90%;
     max-width: 380px;
+    margin-bottom: 80px;
 }
 .new-incident-container .content section img{
     width:90%;
-    max-width: 220px;
-    margin-left: 60px;
+    max-width: 280px;
+    margin-left: 50px;
 }
 
 .new-incident-container .content section h1{

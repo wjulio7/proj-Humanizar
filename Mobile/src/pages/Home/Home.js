@@ -3,7 +3,7 @@ import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
-
+import logoImg from '../../assets.logo.png';
 import api from '../../services/api';
 
 export default function Home() {

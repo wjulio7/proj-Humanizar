@@ -5,7 +5,8 @@
     margin: auto auto;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.479);/* 0.1 é 10% de opacidade */
     background: rgba(250, 249, 249, 0.3);
-    max-height: 200px;
+    max-height: 180px;
+    height: 100%;
     border-radius: 20px;
     
 }
@@ -14,10 +15,12 @@
     display: flex;
     align-items: center;
     max-height: 100px;
+    max-width: 1200px;
 }
 
 .profile-container header span{
     font-size: 20px;
+    margin-top: 20px;
     margin-left: 24px;
     color: #003d74;
 }
@@ -26,14 +29,17 @@
     height: 74px;
     width: 74px;
     border-radius: 80px;
-    margin-left: 15px;
+    margin-left: 38px;
     margin-top: 20px;
+    border-style: solid;
+    border-color: #003d74;
 }
 
 .profile-container header a{
     max-width: 260px;
     margin-left: auto;
-    margin-top: 100px;
+    margin-top: 60px;
+    
 }
 
 
@@ -45,6 +51,7 @@
     margin-left: 16px;
     transition: border-color 0.2s;
     transition: background-color 0.7s;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.479); 
 }
 .profile-container header  .buttonPower{/*botão desligar*/
     max-width: 250px;
@@ -53,11 +60,31 @@
     margin-left: 25px;
     background-color: #0061b0;
     border: 1px solid #0061b0;
-    margin-top: 100px;
+    margin-top: 60px;
+   
 }
 .profile-container header .buttonPower:hover{
     border-color: #999; 
     filter: brightness(90%);/*Opacidade ao passar */
+}
+.profile-container section{
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 50px;
+}
+.profile-container section  .alterar{
+    background-color: #0061b0;
+    border-radius: 22px;
+    max-width: 70px;
+    max-height: 100px;
+    margin-left: 10px;
+    width: 100%;
+    border: none;
+    color: #FFF;
+    box-shadow: -8px 5px 10px rgba(0, 0, 0, 0.479); 
+}
+.profile-container section .alterar:hover{
+    filter: brightness(90%);
 }
 
 .profile-container header button:hover{
@@ -75,22 +102,16 @@
     background-color: #41414d;
     color: #FFF;
 }
-.profile-container input[type="file"] {
-    display: inline-block;
-    
-}
-.profile-container .foto{
-    width: 80px;
-    height: 70px;
-    margin-right: 10px;
-    margin-left: 10px;
+.profile-container section input{
+    max-width: 100px;
+    max-height: 30px;
     
 }
 .profile-container header div {
     margin-left: 20px;
     height: 60px;
     width: 60px;
-    background-size: 100% 100%;
+    background-size: 100% 100% 0;
 }
 .profile-container  .rec{
     max-height: 20px;
@@ -105,6 +126,35 @@
     
 }
 
+.foto::-webkit-file-upload-button {
+  display: none;
+  opacity: 0;
+   position: absolute;
+   z-index: -1;
+}
+.foto::before {
+  content: 'Alterar foto';
+  display: inline-block;
+  background: linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #0061b0;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-size: 10pt;
+  max-width: 100px;
+  max-height: 70px;
+  margin-left: 10px;
+}
+.foto:hover::before {
+  border-color: black;
+}
+.foto:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
 
 .profile-container h1{
     margin-top: 80px;
@@ -123,7 +173,7 @@
 }
 
 .profile-container ul li{
-    background: rgb(184, 221, 253,0.8);
+    background: rgb(184, 221, 253,0.6);
     padding: 24px;
     border-radius: 8px;
     position: relative;
@@ -142,25 +192,25 @@
 
 .profile-container ul li button:hover{
     opacity: 0.5;/*Diminuir a opacidade para 80%*/
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.479)
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.479);
 }
 
 .profile-container ul li strong{
     display: flex;
     margin-bottom: 6px;
     color: #41414d;
-    margin-left: 168px;
+    margin-left: 190px;
 }
 .profile-container ul li p + strong{/*Espaçamento do primeiro Strong para os demais*/
     margin-top: 8px;
-    margin-left: 12px;
+    margin-left: 190px;
     
 }
 .profile-container ul li p{
     color: black;
     line-height: 21px;
     font-size: 16px;
-    margin-left: 170px;
+    margin-left: 190px;
 
     max-width: 43%;
 }
@@ -169,20 +219,24 @@
     height: 170px;
     background-size: 100% 100%;
     float: left;
-   
-    padding-right: 25px;
+    border: #003d74 5px;
+    border-style: solid;
+    border-radius: 5px;
     
 }
 .profile-container ul li textarea{
-    max-width:400px;
+    width: 100%;
+    height: 90%;
+    max-width:600px;
     max-height: 300px;
     color: black;
     background-color:transparent; 
-    padding-right: 60px;
+    
     padding-bottom: 16px;
     overflow: hidden;
-    margin-left: 170px;
+    margin-left: 5px;
     border: transparent;
     overflow: auto;
     resize: none;
+    
 }

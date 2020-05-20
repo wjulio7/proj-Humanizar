@@ -81,7 +81,7 @@ export default function NewProduct() {
                 <input placeholder="Valor"
                        value={value}
                        onChange={e=> setValue(e.target.value)} maxLength="9"/>
-                <input id="fileItem" type="file" onChange={handleChange}/>
+                <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>
                 <button className="button" type="submit">Cadastrar</button>
             </form>
         </div>

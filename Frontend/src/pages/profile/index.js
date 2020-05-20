@@ -108,20 +108,19 @@ export default function Profile() {
         <div className="profile-container">
             <header>
                 <img src={userUrl} width={100} height={100}/>
-                <span>Bem vindo {userName} </span>
+                <span>Bem vindo <p><h4>{userName}</h4></p> </span>
                 <Link className="button" to="/newproduct">Cadastrar Produto</Link>
             <button className="buttonPower"> <Link to="/"><FiPower size={18}  color="#FFF"/> </Link></button>  
             </header>
             <section className="rec">
-               <label for="foto ">Foto de perfil
-               <input  type="file" className="foto" onChange={handleChange}/></label>
-                <button className="button" type="submit" onClick={handleNewProfilePicture} >Enviar</button>
+            <input  type="file" className="foto" accept="image/*"  onChange={handleChange}/>
+            <button className="alterar" type="submit" onClick={handleNewProfilePicture}>Alterar</button>
             </section>
             
             <ul>
                 {produtos.map(produto => (
                     <li key={produto.id}>
-                        <strong>Produto:</strong>
+                        <strong>Produto: </strong>
                         <img src={produto.urlImgProd}/>
                         
                         <p>{produto.title}</p>
