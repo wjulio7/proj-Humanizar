@@ -3,8 +3,10 @@ import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
+import logoImg from '../../assets/logo.png';
 
 import api from '../../services/api';
+import styles from './styles';
 
 export default function DetailProd() {
     const navigation = useNavigation();
@@ -30,14 +32,15 @@ export default function DetailProd() {
       }    
     
     return(
-    <View>
-       <View>
+    <View style={styles.container}>
+       <View style={styles.header}>
+         <image source={logoImg}></image>{/*inseri aqui*/}
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#E82041" />
         </TouchableOpacity>
       </View>
 
-        <View >
+        <View style={styles.incident}>
             <Text>{produto.nameVend}</Text>
             <Text>Vende em {produto.city}/{produto.uf}</Text>
             
@@ -51,7 +54,7 @@ export default function DetailProd() {
                 }).format(produto.value)}
             </Text>
             </View>
-        <View>
+        <View sytles={styles.contactBox}>
         <Text >Entre em contato com o vendedor:</Text>
 
         <View >

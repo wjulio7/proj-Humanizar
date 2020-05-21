@@ -120,7 +120,7 @@ export default function Profile() {
             <ul>
                 {produtos.map(produto => (
                     <li key={produto.id}>
-                        <strong>Produto: </strong>
+                        <strong>Produto:{produto.nameProd} </strong>
                         <img src={produto.urlImgProd}/>
                         
                         <p>{produto.title}</p>

@@ -3,7 +3,7 @@ import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import logoImg from '../../assets.logo.png';
+import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 
 export default function Home() {
@@ -27,9 +27,9 @@ export default function Home() {
       }
 
     return(
-        <View>
+        <View style={styles.container}>
             <View style={styles.header}>
-      {/* <Image source={logoImg} /> */} 
+            <Image source={logoImg} /> 
                 <Text style={styles.headerText}>
                     Vendedores na sua região
                 </Text>
@@ -39,13 +39,13 @@ export default function Home() {
         data={produtos}
         keyExtractor={produto => String(produto.id)}
         renderItem={({ item: produto }) => (
-          <View>
-              <Text>Vendedor: {produto.nameVend} </Text>
+          <View style={styles.incident}>
+              <Text style={styles.incidentProperty}>Vendedor: {produto.nameVend} </Text>
               <Image source={{ uri: produto.urlImgVend }} style={{ width: 50, height: 50 }}/>
-              <Text>Produto: {produto.nameProd}</Text>
+              <Text style={styles.incidentProperty}>Produto: {produto.nameProd}</Text>
               <Text>{produto.description}</Text>
               <Image source={{ uri: produto.urlImgProd }} style={{ width: 100, height: 100 }}/>
-              <Text>Valor: <Text >
+              <Text style={styles.incidentProperty}>Valor: <Text >
               {Intl.NumberFormat('pt-BR', { 
                 style: 'currency', 
                 currency: 'BRL' 
