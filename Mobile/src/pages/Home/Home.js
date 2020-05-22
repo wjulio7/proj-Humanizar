@@ -31,7 +31,7 @@ export default function Home() {
             <View style={styles.header}>
             <Image source={logoImg} /> 
                 <Text style={styles.headerText}>
-                    Vendedores na sua região
+                   Vendedores na sua região 
                 </Text>
         </View>
 
@@ -40,16 +40,17 @@ export default function Home() {
         keyExtractor={produto => String(produto.id)}
         renderItem={({ item: produto }) => (
           <View style={styles.incident}>
-              <Text style={styles.incidentProperty}>Vendedor: {produto.nameVend} </Text>
-              <Image source={{ uri: produto.urlImgVend }} style={{ width: 50, height: 50 }}/>
-              <Text style={styles.incidentProperty}>Produto: {produto.nameProd}</Text>
-              <Text>{produto.description}</Text>
-              <Image source={{ uri: produto.urlImgProd }} style={{ width: 100, height: 100 }}/>
-              <Text style={styles.incidentProperty}>Valor: <Text >
+            <Text style={styles.incidentProperty}>Vendedor: {produto.nameVend} </Text>
+              <Image  source={{ uri: produto.urlImgVend }} style={styles.incidentImg}/>
+            <Text style={styles.incidentProperty}>Produto: {produto.nameProd}</Text>
+            <Text style={styles.auxText}>Descrição: {produto.description}</Text>
+              <Image  source={{ uri: produto.urlImgProd }} style={styles.imgTipo}/>
+              <Text style={styles.textValor}>Valor: <Text >
               {Intl.NumberFormat('pt-BR', { 
                 style: 'currency', 
                 currency: 'BRL' 
               }).format(produto.value)}
+
             </Text></Text>
             
             <TouchableOpacity 

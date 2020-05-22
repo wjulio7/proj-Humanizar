@@ -13,11 +13,10 @@ export default StyleSheet.create({
       alignItems: 'center',
   },
     incident:{
-    padding:24,
-    borderRadius:8,
-    backgroundColor:'#FFF',
-    marginBottom:16,
-    marginTop:48,
+        padding:24,
+        borderRadius:8,
+        backgroundColor:'#e0f2fc',
+        marginBottom:16,
 },
     incidentProperty:{
     fontSize:14,
