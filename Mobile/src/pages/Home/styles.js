@@ -64,7 +64,8 @@ export default StyleSheet.create({
        fontSize:14,
        color: '#41414d',
        fontWeight: 'bold',
-       
+       marginTop:5,
+       marginBottom:3
    },
    incidentValue:{
        marginTop:8,
@@ -82,7 +83,7 @@ export default StyleSheet.create({
        fontSize:15,
        fontWeight: 'bold'
    },
-   imgTipo:{
+   imgType:{
     height:150,
     width:150,
     borderRadius:0 ,
@@ -98,7 +99,7 @@ export default StyleSheet.create({
     color: '#41414d',
     position:'absolute',
     right:15,
-    top:90
+    top:105
    },
    textValor:{
        fontWeight:'bold',

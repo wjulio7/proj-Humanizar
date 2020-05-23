@@ -44,7 +44,7 @@ export default function Home() {
               <Image  source={{ uri: produto.urlImgVend }} style={styles.incidentImg}/>
             <Text style={styles.incidentProperty}>Produto: {produto.nameProd}</Text>
             <Text style={styles.auxText}>Descrição: {produto.description}</Text>
-              <Image  source={{ uri: produto.urlImgProd }} style={styles.imgTipo}/>
+              <Image  source={{ uri: produto.urlImgProd }} style={styles.imgType}/>
               <Text style={styles.textValor}>Valor: <Text >
               {Intl.NumberFormat('pt-BR', { 
                 style: 'currency', 
@@ -56,8 +56,8 @@ export default function Home() {
             <TouchableOpacity 
               onPress={() => navigateToDetail(produto)}
             >
-              <Text >Ver mais detalhes</Text>
-              <Feather name="arrow-right" size={16} color="#E02041" />
+              <Text style={styles.tablink}>Ver mais detalhes</Text>
+              <Feather style={styles.tabLinkSeta}name="arrow-right" size={16} color="#E02041" />
             </TouchableOpacity>
             
           </View>

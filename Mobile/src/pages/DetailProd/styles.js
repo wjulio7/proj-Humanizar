@@ -6,6 +6,7 @@ export default StyleSheet.create({
       flex:1,
       paddingHorizontal:24,
       paddingTop: Constants.statusBarHeight +20,
+      backgroundColor: '#bddefd'
   },
     header:{
       flexDirection: 'row',
@@ -22,10 +23,10 @@ export default StyleSheet.create({
     fontSize:14,
     color: '#41414d',
     fontWeight: 'bold',
-    marginTop:24,
+    marginTop:0,
 },
     incidentValue:{
-    marginTop:8,
+    marginTop:0,
     fontSize:15,
     color:'#737380'
 },
@@ -33,7 +34,7 @@ export default StyleSheet.create({
     padding:24,
     borderRadius:8,
     backgroundColor:'#FFF',
-    marginBottom: 16,
+    marginBottom: 18,
 },
     heroTitle: {
         fontWeight: 'bold',
@@ -52,7 +53,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     action:{
-        backgroundColor: '#e02041',
+        backgroundColor: '#FFF',
         borderRadius: 8,
         height: 50,
         width: '48%',
@@ -60,9 +61,19 @@ export default StyleSheet.create({
         alignItems:'center',
     },
     actionText:{
-        color:'#FFF',
         fontSize:15,
         fontWeight: 'bold',
-    }
+    },
+    imgType:{
+        height:120,
+        width:120,
+        left:145,
+        bottom:185,
+        borderRadius:0 ,
+       borderColor:'#bddefd',
+       borderStyle:"solid",
+       borderWidth:2,
+       resizeMode:'center',
+       }
 
 });
