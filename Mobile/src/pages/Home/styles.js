@@ -50,7 +50,7 @@ export default StyleSheet.create({
    borderColor:'#bddefd',
    borderStyle:"solid",
    borderWidth:2,
-   resizeMode:'contain',
+   resizeMode:'stretch',
    alignContent:'center'
    },
    incident:{
@@ -85,7 +85,7 @@ export default StyleSheet.create({
    },
    imgType:{
     height:150,
-    width:150,
+    width:280,
     borderRadius:0 ,
    borderColor:'#bddefd',
    borderStyle:"solid",

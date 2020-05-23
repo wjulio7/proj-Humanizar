@@ -38,10 +38,11 @@ export default function DetailProd() {
           <Feather name="arrow-left" size={28} color="#E82041" />
         </TouchableOpacity>
       </View>
-
+        
         <View style={styles.contactBox}>
-          
-          <Text style={[styles.incidentProperty, { marginTop:0 }]}>Produto:</Text>
+        <Image style={styles.imgType} source={{ uri: produto.urlImgProd }} />
+          <Text style={[styles.incidentProperty, { marginTop:0 }]}>Produto:
+          </Text>
           <Text style={styles.incidentValue}>{produto.nameProd}</Text>
           <Text style={[styles.incidentProperty, { marginTop:0 }]}>Vendedor:</Text>
             <Text style={styles.incidentValue}> {produto.nameVend}</Text>
@@ -53,12 +54,12 @@ export default function DetailProd() {
                 style: 'currency', 
                 currency: 'BRL' 
                 }).format(produto.value)}
-            </Text>
-              <Text style={styles.incidentProperty}> </Text>
-              <Image source={{ uri: produto.urlImgProd }} style={styles.imgType}/>
+            </Text> 
+            <Text style={styles.incidentProperty}>Descrição:</Text>
+              <Text style={styles.incidentValue}> {produto.description} </Text>
             </View>
         <View sytle={styles.contactBox}>
-        <Text style={styles.heroTitle} >Entre em contato com o vendedor:</Text>
+        <Text style={styles.weTitle} >Entre em contato com o vendedor:</Text>
 
         <View style={styles.actions} >
           <TouchableOpacity  style={styles.action} onPress={sendWhatsApp}>

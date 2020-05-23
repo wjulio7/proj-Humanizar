@@ -3,9 +3,9 @@ import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container:{
-      flex:1,
+      flex:2,
       paddingHorizontal:24,
-      paddingTop: Constants.statusBarHeight +20,
+      paddingTop: Constants.statusBarHeight +5,
       backgroundColor: '#bddefd'
   },
     header:{
@@ -23,26 +23,33 @@ export default StyleSheet.create({
     fontSize:14,
     color: '#41414d',
     fontWeight: 'bold',
-    marginTop:0,
+    marginTop:4,
 },
     incidentValue:{
     marginTop:0,
     fontSize:15,
-    color:'#737380'
+    color:'#737380',
 },
     contactBox:{
-    padding:24,
+    padding:22,
     borderRadius:8,
     backgroundColor:'#FFF',
-    marginBottom: 18,
+    marginBottom: 5,
 },
-    heroTitle: {
+    contactBox2:{
+    height:180,
+    width:190,
+    left:90,
+    backgroundColor:'#13131a',
+
+},
+    weTitle: {
         fontWeight: 'bold',
         fontSize: 20,
         color: '#13131a',
         lineHeight:30,
     },
-    heroDescription:{
+    weDescription:{
         fontSize:15,
         color: '#737380',
         marginTop:16,
@@ -65,10 +72,8 @@ export default StyleSheet.create({
         fontWeight: 'bold',
     },
     imgType:{
-        height:120,
-        width:120,
-        left:145,
-        bottom:185,
+        height:85,
+        width: 85,
         borderRadius:0 ,
        borderColor:'#bddefd',
        borderStyle:"solid",

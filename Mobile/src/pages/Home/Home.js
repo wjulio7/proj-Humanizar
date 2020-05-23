@@ -43,7 +43,7 @@ export default function Home() {
             <Text style={styles.incidentProperty}>Vendedor: {produto.nameVend} </Text>
               <Image  source={{ uri: produto.urlImgVend }} style={styles.incidentImg}/>
             <Text style={styles.incidentProperty}>Produto: {produto.nameProd}</Text>
-            <Text style={styles.auxText}>Descrição: {produto.description}</Text>
+            
               <Image  source={{ uri: produto.urlImgProd }} style={styles.imgType}/>
               <Text style={styles.textValor}>Valor: <Text >
               {Intl.NumberFormat('pt-BR', { 
