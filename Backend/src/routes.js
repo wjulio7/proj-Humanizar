@@ -14,6 +14,8 @@ const produtoClienteController = require('./controllers/produtoClienteController
 routes.post('/cadastroVendedorController', cadastroVendedorController.create);
 
 routes.post('/loginVendedorController', loginVendedorController.create);
+routes.put('/alterasenha/:id', vendedorController.update);
+
 
 routes.get('/produtoslistar', produtoController.index);
 routes.post('/produtoController', produtoController.create);
@@ -24,13 +26,4 @@ routes.get('/produtoclientecontroller', produtoClienteController.index);
 //routes.get('/vendedorinfo', vendedorController.index);
 routes.post('/vendedorinfoalter', vendedorController.alter);
 
-
-
-
-
-
-
-
-
-
-module.exports = routes;
+//routes.post('/esqueci', loginVendedorController);
