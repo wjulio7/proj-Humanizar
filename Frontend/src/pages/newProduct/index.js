@@ -10,13 +10,11 @@ import api from '../../services/api'
 
 export default function NewProduct() {
 
-    const[nameProd, setnameProd] = useState('')
-    const[description, setDescription] = useState('')
-    const[value, setValue] = useState('')
+    const[nameProd, setnameProd] = useState(null)
+    const[description, setDescription] = useState(null)
+    const[value, setValue] = useState(null)
     //const [urlImgProd, seturlImgProd] = useState("")
-
-    const [image, setImage] = useState("");
-
+    const [image, setImage] = useState(null);
     const usercpf = localStorage.getItem('userCpf')
     const history = useHistory()
 
@@ -28,35 +26,45 @@ export default function NewProduct() {
     }
     async function handleNewProduct(e) {
         e.preventDefault()
-        const imgProdName = Math.random()+image.name
-
-        const UploadTask = storage.ref(`images/${imgProdName}`).put(image)//put faz o upload
-        UploadTask.on("state_changed",
-            snapshot => {},//this basicaly indicate the current progress of file upload
-            error => {
-                console.log(error);
-            },
-            () => {
-                storage
-                    .ref("images")
-                    .child(imgProdName)
-                    .getDownloadURL()//the url of thefile that we uploaded to firebase
-                    .then(urlImgProd =>{
-                        const data = {
-                            nameProd,
-                            description,
-                            value,
-                            urlImgProd,
-                            imgProdName
-                        };
-                        api.post('produtoController', data,{
-                            headers: {
-                                Authorization: usercpf
-                            }
+        if(nameProd == null || nameProd.trim() == "" ){
+            alert('Informe o nome do produto')
+          }else if(description == null || description.trim() == "" ){
+            alert('Informe a descrição do produto')
+          }else if(value== null || value.trim() == "" ){
+                alert('Informe o valor do produto')
+            }else if(image== null ){
+                alert('Selecione uma imagem para o seu produto')
+            }else{
+            const imgProdName = Math.random()+image.name
+            const UploadTask = storage.ref(`images/${imgProdName}`).put(image)//put faz o upload
+            UploadTask.on("state_changed",
+                snapshot => {},//this basicaly indicate the current progress of file upload
+                error => {
+                    console.log(error);
+                },
+                () => {
+                    storage
+                        .ref("images")
+                        .child(imgProdName)
+                        .getDownloadURL()//the url of thefile that we uploaded to firebase
+                        .then(urlImgProd =>{
+                            const data = {
+                                nameProd,
+                                description,
+                                value,
+                                urlImgProd,
+                                imgProdName
+                            };
+                            api.post('produtoController', data,{
+                                headers: {
+                                    Authorization: usercpf
+                                }
+                            })
+                            history.push('/profile')
                         })
-                        history.push('/profile')
-                    })
-            })
+                })
+        }
+      
     }
     return(
         <div className="new-incident-container">
@@ -65,7 +73,6 @@ export default function NewProduct() {
         <img src={logoImg} alt="Barganhar" />
         <h1>Cadastrar novo produto</h1>
         <p>Cadastre aqui um produto que deseje oferecer.</p>
-
         <Link className="back-link" to="/profile">{/*Chamando o estilo da class back-link*/}
                 <FiArrowLeft size={16} color="#E02041"/>
                 Voltar para página de cadastro de produtos.
@@ -79,6 +86,7 @@ export default function NewProduct() {
                        value={description}
                        onChange={e=> setDescription(e.target.value)} maxLength="160"/>
                 <input placeholder="Valor"
+                        type="number"
                        value={value}
                        onChange={e=> setValue(e.target.value)} maxLength="9"/>
                 <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>

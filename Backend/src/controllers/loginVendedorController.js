@@ -12,9 +12,9 @@ module.exports = {
         .first();
   
       if (!vendedor) {
-        return response.status(400).json({ error: 'vendedor não encontrado' });
+        return response.status(400).json({ message: 'Falha ao efetuar Login, cheque suas informaçoes' });
       }
-  
+     
       return response.json(vendedor);
     }
   }

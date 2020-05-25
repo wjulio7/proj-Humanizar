@@ -133,7 +133,7 @@ export default function Profile() {
                         <p>Cidade: {produto.city}</p>
                         <p>Uf: {produto.uf}</p>
                         
-                        <strong>Descrição</strong>
+                        <strong>Descrição:</strong>
                         <textarea>{produto.description}</textarea>
                         
                         <button onClick={() => handleDeleteIncident(produto.id, produto.imgProdName) } type="button">
