@@ -5,7 +5,7 @@ import './styles.css';
 import api from '../../services/api';
 import logoImg from '../../assets/bar.png';
 import Axios from 'axios';
-import Select from 'react-select'
+import Select from 'react-select';
 
 export default function Register() {
     const[cpf, setCpf] = useState(null)
@@ -145,7 +145,8 @@ export default function Register() {
                     type="number"
                        value={cpf} // função reduzida
                        onChange={e=> setCpf(e.target.value.trim())}
-                       maxLength="11"
+                       
+                       
                 />
                 <input placeholder="Rg"
                 type="number"
@@ -163,14 +164,14 @@ export default function Register() {
                        maxLength="11"
                        />
                 <div className="input-group">
-                <Select options={options}
+                <Select className="Selection" options={options}
                 theme={customTheme}
                 onChange={e => setUf(e.value)}
                 autoFocus
                 placeholder="UF"
                 isSearchable
                />
-               <Select options={options2}
+               <Select className="SelectionCity" options={options2}
                theme={customTheme}
                placeholder="Cidade"
                onChange={e => setCity(e.value)}

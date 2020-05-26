@@ -68,10 +68,36 @@
 
 .register-container .content .input-group{
     display: flex;
-    width: 440px;
-    height: 26px;
+    max-width: 1640px;
+    height: 60px;
+}
+.register-container .content .input-group .Selection{
+    max-Width: 100px;
+    width: 100%;
+    max-Height: 80px;
+    height: 100%;
+    margin-top: 12px;
+    margin-left: 0px;
+    margin-right: 18px;
+   
+}
+
+ .SelectionCity{
+    max-Width: 318px;
+    width: 100%;
+    max-Height: 500px;
+    height: 70%;
+    border-radius: 22px;
+    margin-top: 12px;
+    padding-bottom: 12px;
+    
+}
+.SelectionCity{
+       max-width: 322px;
+       border-radius: 150px;
+    
 }
 
 .register-container .content from .input-group input + input{/*Pega todo input que tenha um input antes ou seja o segundo*/
-    margin-left: 8px;
+    margin-left: 18px;
 }
