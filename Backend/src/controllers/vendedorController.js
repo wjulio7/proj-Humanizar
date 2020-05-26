@@ -25,15 +25,15 @@ module.exports = {
         try {
           const { cpf } = request.params
           const { password } = request.body
-    
+
           await connection('vendedor')
             .where('cpf', cpf)
             .select('password')
             .update('password', password)
-    
+
           //return response.send();
-    
-    
+
+
         } catch (err) {
           response.status(400).send({ error: 'erro ao alterar a senha, tente novamente' })
           next(err)

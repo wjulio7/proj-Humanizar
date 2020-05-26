@@ -1,9 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi';//importa o botão de voltar
 import './styles.css';
 import api from '../../services/api';
 import logoImg from '../../assets/bar.png';
+import Axios from 'axios';
+import Select from 'react-select'
 
 export default function Register() {
     const[cpf, setCpf] = useState(null)
@@ -20,8 +22,52 @@ export default function Register() {
 
     const history = useHistory()
 
+    //const[selectedOption, setselectedOption] = useState([])
+    const[selectedcity, setselectedcity] = useState([])
+    const[localidades, setlocalidades] = useState([])
+
+    useEffect(() => {
+      console.log(city)
+      teste()
+   }, [uf]);
+  async function teste(){
+       await Axios.get( `/api/cidades/${uf}`).then(res => {
+           const dados = res.data
+           setlocalidades(dados)
+       })
+  }
+  function customTheme(theme){
+    return{
+      ...theme,
+      colors:{
+        ...theme.colors,
+        primary25: 'Lightskyblue',
+        primary:'Lightskyblue'
+      }
+    }
+  }
+    const options2 = localidades.map(v => ({
+             label: v.slice(8),
+             value: v.slice(8)
+           }));
+    const options = [
+        { value: 'AC', label: 'AC' },{ value: 'AL', label: 'AL' },
+        { value: 'AP', label: 'AP' },{ value: 'AM', label: 'AM' },
+        { value: 'BA', label: 'BA' },{ value: 'CE', label: 'CE' },
+        { value: 'DF', label: 'DF' },{ value: 'ES', label: 'ES' },
+        { value: 'GO', label: 'GO' },{ value: 'MA', label: 'MA' },
+        { value: 'MT', label: 'MT' },{ value: 'MS', label: 'MS' },
+        { value: 'MG', label: 'MG' },{ value: 'PA', label: 'PA' },
+        { value: 'PB', label: 'PB' },{ value: 'PR', label: 'PR' },
+        { value: 'PE', label: 'PE' },{ value: 'PI', label: 'PI' },
+        { value: 'RJ', label: 'RJ' },{ value: 'RN', label: 'RN' },
+        { value: 'RS', label: 'RS' },{ value: 'RO', label: 'RO' },
+        { value: 'RR', label: 'RR' },{ value: 'SC', label: 'SC' },
+        { value: 'SP', label: 'SP' },{ value: 'SE', label: 'SE' },
+        { value: 'TO', label: 'TO' },
+    ]
     async function handleRegistrer(e) {
-        e.preventDefault()//previnindo o comportamento do load do submit       
+        e.preventDefault()//previnindo o comportamento do load do submit
          if(nameVend == null || nameVend.trim() == "" ){
             alert('Voce não informou o sue Nome')
           }else if(cpf == null || cpf.trim() == "" ){
@@ -38,7 +84,6 @@ export default function Register() {
                 alert('Voce não preencheu o campo WhatsApp')
               }
         else{
-           
           const data = {
               cpf,
               urlImgVend,
@@ -64,8 +109,6 @@ export default function Register() {
             }
           }
         }
-
-
     return(
         <div className="register-container">
             <div className="content">
@@ -73,7 +116,6 @@ export default function Register() {
             <img src={logoImg} alt="Barganhar" />
             <h1>Cadastro</h1>
             <p>Realize aqui o seu cadastro como vendedor.</p>
-
             <Link className="back-link" to="/">{/*Chamando o estilo da class back-link*/}
                 <FiArrowLeft size={16} color="#E02041"/>
                 Não, já possuo cadastro
@@ -120,18 +162,21 @@ export default function Register() {
                        onChange={e=> setWhatsapp(e.target.value.trim())}
                        maxLength="11"
                        />
-
                 <div className="input-group">
-                    <input placeholder="Cidade"
-                           value={city}
-                           onChange={e=> setCity(e.target.value)}
-                           maxLength="33"/>
-                    <input placeholder="UF" style={{width:80}}
-                           value={uf}
-                           onChange={e=> setUf(e.target.value.trim())}
-                           maxLength="2"/>
+                <Select options={options}
+                theme={customTheme}
+                onChange={e => setUf(e.value)}
+                autoFocus
+                placeholder="UF"
+                isSearchable
+               />
+               <Select options={options2}
+               theme={customTheme}
+               placeholder="Cidade"
+               onChange={e => setCity(e.value)}
+               isSearchable
+               noOptionsMessage={()=>'Selecione o UF desejado'}/>
                 </div>
-
                 <button className="button" type="submit">Cadastrar</button>
             </form>
             </div>
