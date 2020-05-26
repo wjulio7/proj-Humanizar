@@ -27,3 +27,7 @@ routes.get('/produtoclientecontroller', produtoClienteController.index);
 routes.post('/vendedorinfoalter', vendedorController.alter);
 
 //routes.post('/esqueci', loginVendedorController);
+
+
+
+module.exports = routes;

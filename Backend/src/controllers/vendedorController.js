@@ -41,12 +41,3 @@ module.exports = {
         //await connection('vendedor').where('cpf', cpf).update();
       }
 }
-
-
-
-
-
-
-
-
-module.exports = routes;
