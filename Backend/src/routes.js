@@ -14,7 +14,6 @@ routes.post('/recuperarsenhacontroller', recuperarSenhaController.alter)
 routes.post('/cadastroVendedorController', cadastroVendedorController.create);
 
 routes.post('/loginVendedorController', loginVendedorController.create);
-routes.put('/alterasenha/:id', vendedorController.update);
 
 routes.get('/produtoslistar', produtoController.index);
 routes.post('/produtoController', produtoController.create);
