@@ -120,7 +120,7 @@ export default function Profile() {
             <ul>
                 {produtos.map(produto => (
                     <li key={produto.id}>
-                        <strong>Produto:{produto.nameProd} </strong>
+                        <strong>{produto.nameProd} </strong>
                         <img src={produto.urlImgProd}/>
                         
                         <p>{produto.title}</p>
@@ -137,7 +137,7 @@ export default function Profile() {
                         <textarea>{produto.description}</textarea>
                         
                         <button onClick={() => handleDeleteIncident(produto.id, produto.imgProdName) } type="button">
-                            <FiTrash2 size={20} color="#152cad"/>
+                            <FiTrash2 size={20} color="#FFFF"/>
                         </button>
                     </li>
                 ))}
