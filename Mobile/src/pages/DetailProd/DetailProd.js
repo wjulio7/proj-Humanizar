@@ -7,6 +7,7 @@ import logoImg from '../../assets/logo.png';
 
 
 import styles from './styles';
+import { TextInput } from 'react-native-gesture-handler';
 
 export default function DetailProd() {
     const navigation = useNavigation();
@@ -55,8 +56,15 @@ export default function DetailProd() {
                 currency: 'BRL' 
                 }).format(produto.value)}
             </Text> 
+            
             <Text style={styles.incidentProperty}>Descrição:</Text>
-              <Text style={styles.incidentValue}> {produto.description} </Text>
+              {/*<Text style={styles.incidentValue}> {produto.description} </Text>*/}
+              <TextInput style={styles.incidentValue}
+              multiline={true}
+              numberOfLines={4}
+              style={{ height:100}}
+              > 
+              {produto.description}</TextInput>
             </View>
         <View sytle={styles.contactBox}>
         <Text style={styles.weTitle} >Entre em contato com o vendedor:</Text>
@@ -69,6 +77,7 @@ export default function DetailProd() {
           <TouchableOpacity  style={styles.action}onPress={sendMail}>
             <Text style={styles.actionText}>E-mail</Text>
           </TouchableOpacity>
+          
         </View>
 
         </View>

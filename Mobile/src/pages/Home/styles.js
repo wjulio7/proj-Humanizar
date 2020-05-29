@@ -5,8 +5,8 @@ export default StyleSheet.create({
    container:{
        flex:1,
        paddingHorizontal:20,
-       paddingTop: Constans.statusBarHeight +60,
-       backgroundColor: '#bddefd'
+       paddingTop: Constans.statusBarHeight +40,
+       backgroundColor: '#589eff'
        
    },
 
@@ -19,7 +19,7 @@ export default StyleSheet.create({
    },
    headerText:{
        fontSize:15,
-       color: '#737380',
+       color: '#41414d',
        fontWeight:'bold'
    },
 
@@ -31,7 +31,7 @@ export default StyleSheet.create({
        fontSize:30,
        marginBottom :16,
         marginTop: 48,
-        color: '#13131a',
+        color: '#41414d',
         fontWeight: 'bold'
    },
 
@@ -46,7 +46,7 @@ export default StyleSheet.create({
    incidentImg:{
        height:50,
        width:50,
-    borderRadius:70 ,
+    borderRadius:70,
    borderColor:'#bddefd',
    borderStyle:"solid",
    borderWidth:2,
@@ -58,7 +58,6 @@ export default StyleSheet.create({
        borderRadius:8,
        backgroundColor:'#e0f2fc',
        marginBottom:16,
-       
    },
    incidentProperty:{
        fontSize:14,
