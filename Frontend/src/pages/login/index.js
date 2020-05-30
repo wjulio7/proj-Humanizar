@@ -55,10 +55,17 @@ export default function Login() {
                 <FiLogIn size={16} color="#E02041"/>
                 Não tenho cadastro
             </Link>
+            <Link className="back-link" to="/alteracaodesenha">
+            <FiLogIn size={16} color="#E02041"/>
+                Alterar Senha
+            </Link>
             </form>
             </section>
             <img src={tendaImg} alt="Tenda"/>{/*Dentro de chaves a variável */}
         </div>
+        <footer className="Desenvolvedores">
+            Desenvolvido por : Alexandro,Breno, Ronni, Túlius Alves e Wolgran Julio
+        </footer>
         </html>
     )
 }

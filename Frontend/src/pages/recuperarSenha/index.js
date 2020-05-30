@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
-import {FiPower, FiTrash2} from "react-icons/fi";
+import { FiArrowLeft } from 'react-icons/fi';//importa o botão de voltar
 
 import logoImg from '../../assets/bar.png';
 import api from '../../services/api';
@@ -29,9 +29,19 @@ export default function RecSenha() {
     }
 
     return (
-        <div>
+        <html>
+        <div className="register-container">
+            <div className="content">
+            <section>
+            <img src={logoImg} alt="Barganhar" />
+            <h1>Alterar Senha</h1>
+            <p>Use seu CPF e RG para alterar sua senha.</p>
+            <Link className="back-link" to="/">{/*Chamando o estilo da class back-link*/}
+                <FiArrowLeft size={16} color="#E02041"/>
+                Voltar para página inicial
+            </Link>
+            </section>
             <form onSubmit={handlerecSenha}>
-            <h1>Recuperação de senha</h1>
             <input placeholder="Cpf"
                     type="number"
                     value={cpf} // função reduzida
@@ -41,11 +51,19 @@ export default function RecSenha() {
                     value={rg} // função reduzida
                     onChange={e=> setRg(e.target.value.trim())}
                     maxLength="7"/>
-            <input placeholder="Digite sua Senha" type="password"
+            <input placeholder="Digite uma nova Senha" type="password"
                     value={password}
-                    onChange={e=> setPassword(e.target.value.trim())}/>
-            <button className="button" type="submit">Recuperar</button>
+                    onChange={e=> setPassword(e.target.value.trim())}
+                    minLength="3"
+                    maxLength="25"
+                    />
+            <button className="button" type="submit">Alterar senha</button>
             </form>
         </div>
+        </div>
+        <footer className="Desenvolvedores">
+        Desenvolvido por : Alexandro,Breno, Ronni, Túlius Alves e Wolgran Julio
+        </footer>
+        </html>
         )
 }

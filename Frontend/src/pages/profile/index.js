@@ -105,6 +105,7 @@ export default function Profile() {
             })
     }
     return (
+        <html>
         <div className="profile-container">
             <header>
                 <img src={userUrl} width={100} height={100}/>
@@ -143,5 +144,6 @@ export default function Profile() {
                 ))}
             </ul>
             </div>
+            </html>
     )
 }

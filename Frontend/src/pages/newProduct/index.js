@@ -63,6 +63,7 @@ export default function NewProduct() {
                 })
         }}
     return(
+        <html>
         <div className="new-incident-container">
             <div className="content">
             <section>
@@ -84,11 +85,15 @@ export default function NewProduct() {
                 <input placeholder="Valor"
                         type="number"
                        value={value}
-                       onChange={e=> setValue(e.target.value)} maxLength="9"/>
+                       onChange={e=> setValue(e.target.value)} min="1" max="99999"/>
                 <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>
                 <button className="button" type="submit">Cadastrar</button>
             </form>
         </div>
     </div>
+    <footer className="Desenvolvedores">
+            Desenvolvido por : Alexandro,Breno, Ronni, Túlius Alves e Wolgran Julio
+        </footer>
+    </html>
     )
 }

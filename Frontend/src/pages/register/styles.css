@@ -101,3 +101,12 @@
 .register-container .content from .input-group input + input{/*Pega todo input que tenha um input antes ou seja o segundo*/
     margin-left: 18px;
 }
+.Desenvolvedores{
+    
+    width: 100%;
+    max-width: 100%;
+    max-height: 25%;
+    margin-top: 95px;
+    color: #003d74;
+    text-align: center; 
+}

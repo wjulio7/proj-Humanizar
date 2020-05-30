@@ -110,6 +110,7 @@ export default function Register() {
           }
         }
     return(
+      <html>
         <div className="register-container">
             <div className="content">
             <section>
@@ -133,12 +134,14 @@ export default function Register() {
                        value={password} // função reduzida
                        type="password"
                        onChange={e=> setPassword(e.target.value.trim())}
+                       minLength="3"
                        maxLength="25"
                 />
                 <input placeholder="Confrimar Senha"
                        value={confirmPassword} // função reduzida
                        type="password"
                        onChange={e=> setConfirmPassword(e.target.value.trim())}
+                       minLength="3"
                        maxLength="25"
                 />
                 <input placeholder="Cpf"
@@ -180,5 +183,9 @@ export default function Register() {
             </form>
             </div>
         </div>
+        <footer className="Desenvolvedores">
+            Desenvolvido por : Alexandro,Breno, Ronni, Túlius Alves e Wolgran Julio
+        </footer>
+        </html>
     )
 }
