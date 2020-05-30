@@ -8,7 +8,9 @@ const vendedorController = require('./controllers/vendedorController')
 
 const produtoController = require('./controllers/ProdutoController')
 
+//const produtoClienteController = require('./controllers/produtoClienteController')
 const produtoClienteController = require('./controllers/produtoClienteController')
+routes.get('/produtoclientecontroller', produtoClienteController.index);
 
 const alterarSenhaController = require('./controllers/alterarSenhaController')
 routes.post('/alterarsenhacontroller', alterarSenhaController.alter)
@@ -20,8 +22,6 @@ routes.post('/loginVendedorController', loginVendedorController.create);
 routes.get('/produtoslistar', produtoController.index);
 routes.post('/produtoController', produtoController.create);
 routes.delete('/produtos/:id', produtoController.delete);
-
-routes.get('/produtoclientecontroller', produtoClienteController.index);
 
 //routes.get('/vendedorinfo', vendedorController.index);
 routes.post('/vendedorinfoalter', vendedorController.alter);
