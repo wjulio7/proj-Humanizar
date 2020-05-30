@@ -4,7 +4,7 @@ import {storage} from '../../firebase/index'
 import logoImg from '../../assets/bar.png';
 import {FiArrowLeft} from 'react-icons/fi';
 import './styles.css';
-
+import Select from 'react-select';
 
 import api from '../../services/api'
 
@@ -13,10 +13,27 @@ export default function NewProduct() {
     const[nameProd, setnameProd] = useState(null)
     const[description, setDescription] = useState(null)
     const[value, setValue] = useState(null)
+    const[categoriaProd, setCategoriaProd] = useState(null)
     //const [urlImgProd, seturlImgProd] = useState("")
     const [image, setImage] = useState(null);
     const usercpf = localStorage.getItem('userCpf')
     const history = useHistory()
+
+    const options = [
+        { value: 'Alimentos', label: 'Alimentos' },{ value: 'Eletrônicos', label: 'Eletrônicos' },
+        { value: 'Informática', label: 'Informática' },{ value: 'Outros', label: 'Outros' },
+        { value: 'Serviços', label: 'Serviços' },{ value: 'Utensílios', label: 'Utensílios' }
+    ]
+    function customTheme(theme){
+        return{
+          ...theme,
+          colors:{
+            ...theme.colors,
+            primary25: 'Lightskyblue',
+            primary:'Lightskyblue'
+          }
+        }
+      }
 
     //pega mudanças na imagem selecionada
     const handleChange = e => {
@@ -51,6 +68,7 @@ export default function NewProduct() {
                                 description,
                                 value,
                                 urlImgProd,
+                                categoriaProd,
                                 imgProdName
                             };
                             api.post('produtoController', data,{
@@ -85,7 +103,7 @@ export default function NewProduct() {
                 <input placeholder="Valor"
                         type="number"
                        value={value}
-                       onChange={e=> setValue(e.target.value)} min="1" max="99999"/>
+                       onChange={e=> setValue(e.target.value)} maxLength="9"/>
                 <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>
                 <button className="button" type="submit">Cadastrar</button>
             </form>

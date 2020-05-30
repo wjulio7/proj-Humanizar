@@ -7,6 +7,7 @@ exports.up = function (knex) {
         table.decimal('value').notNullable();
         table.string('imgProdName').notNullable();
         table.string('urlImgProd').notNullable();
+        table.string('categoriaProd').notNullable();
         table.string('vendedor_id').notNullable();
 
         table.foreign('vendedor_id').references('cpf').inTable('vendedor');

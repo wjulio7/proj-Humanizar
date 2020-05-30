@@ -12,6 +12,7 @@ export default function Home() {
     const [produtos, setProdutos] = useState([]);
     const [selecteduf, setSelecteduf] = useState({name: ""})
     const [selectedCity, setselectedCity] = useState({name:""})
+    const [selectedCategoria, setSelectedCategoria] = useState({name:"Todos"})
     const [localidades, setlocalidades] = useState([])
     const [data, setData] = useState([]);
 
@@ -20,12 +21,21 @@ export default function Home() {
     async function loadProdutos() {
       const city = selectedCity.name
       const uf = selecteduf.name
+      const categoriaProd = selectedCategoria.name
       console.log(uf)
       console.log(city)
-        const response = await api.get('produtoclientecontroller', {
+      if(categoriaProd == 'Todos'){
+        const response = await api.get('produtoclientecontrollerlistartodos', {
           params: { uf, city}
         });
         setProdutos(response.data);
+      }else{
+        const response = await api.get('produtoclientecontroller', {
+          params: { uf, city, categoriaProd}
+        });
+        setProdutos(response.data);
+      }    
+        
       }
 
       useEffect(() => {
@@ -37,7 +47,7 @@ export default function Home() {
              setData(responseJson)})
         //.then((json) => setData(json))
         loadProdutos();
-      }, [selecteduf, selectedCity]);
+      }, [selecteduf, selectedCity,selectedCategoria]);
 
       function navigateToDetail(produto) {
         navigation.navigate('DetailProd', { produto });
@@ -53,7 +63,10 @@ export default function Home() {
         { name: 'SP' },{ name: 'SE' },{ name: 'TO' }]
         const options2 = data.map(v => ({
                  name: v.slice(8),}));
-      
+        const optionsCat = [
+       { name: 'Alimentos' },{ name: 'Eletrônicos' },
+      { name: 'Informática' },{ name: 'Outros'},
+      { name: 'Serviços' },{ name: 'Utensílios' }, { name: 'Todos' }]
     return(
         <View style={styles.container}>
             <View style={styles.header}>
@@ -99,6 +112,33 @@ export default function Home() {
                                   borderColor: 'blue',
                                   borderRadius: 5},                              
                               }}/>
+               <SearchableDropdown
+                            items={ optionsCat}
+                          onItemSelect={(item) => {
+                          setSelectedCategoria(item)}}
+                          itemStyle={{
+                            padding: 10,
+                            marginTop: 2,
+                            backgroundColor: '#ddd',
+                            borderColor: '#bbb',
+                            borderWidth: 1,
+                            borderRadius: 5,
+                          }}
+                          defaultIndex={6}
+                          textInputProps={{
+                          placeholder: "Categoria",
+                          underlineColorAndroid: "transparent",  
+                          style: {
+                              padding: 12,
+                              borderWidth: 1,
+                              borderColor: 'blue',
+                              borderRadius: 5},              
+                          }}
+                          listProps={
+                            {
+                              nestedScrollEnabled: true,
+                            }
+                          }/>
         </View>
 
         <FlatList

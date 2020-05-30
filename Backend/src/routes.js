@@ -11,6 +11,7 @@ const produtoController = require('./controllers/ProdutoController')
 //const produtoClienteController = require('./controllers/produtoClienteController')
 const produtoClienteController = require('./controllers/produtoClienteController')
 routes.get('/produtoclientecontroller', produtoClienteController.index);
+routes.get('/produtoclientecontrollerlistartodos', produtoClienteController.indexcategoriatodos);
 
 const alterarSenhaController = require('./controllers/alterarSenhaController')
 routes.post('/alterarsenhacontroller', alterarSenhaController.alter)

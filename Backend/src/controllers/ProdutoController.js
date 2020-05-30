@@ -25,12 +25,13 @@ module.exports = {
         return response.json(product);
     },
     async create(request, response) {
-        const { nameProd, imgProdName, urlImgProd, description, value } = request.body;
+        const { nameProd, imgProdName, urlImgProd, categoriaProd, description, value } = request.body;
         const vendedor_id = request.headers.authorization;
 
         const [id] = await connection('product').insert({
             nameProd,
             imgProdName,
+            categoriaProd,
             urlImgProd,
             description,
             value,
