@@ -11,10 +11,10 @@ module.exports = {
     }*/
     async alter(request, response, next) {
         try {
-          const  cpf  = request.headers.authorization;
-          const  rg = request.headers.authorization2;
-
-          const { password } = request.body;
+          //const  cpf  = request.headers.authorization;
+         // const  rg = request.headers.authorization2;
+          
+          const { cpf, rg, password } = request.body;
 
           const vendedor = await connection('vendedor')
             .where('cpf', cpf)

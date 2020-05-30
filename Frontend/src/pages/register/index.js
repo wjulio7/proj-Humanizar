@@ -144,9 +144,7 @@ export default function Register() {
                 <input placeholder="Cpf"
                     type="number"
                        value={cpf} // função reduzida
-                       onChange={e=> setCpf(e.target.value.trim())}
-                       
-                       
+                       onChange={e=> setCpf(e.target.value.trim())}  
                 />
                 <input placeholder="Rg"
                 type="number"

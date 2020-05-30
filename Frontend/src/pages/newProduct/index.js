@@ -22,8 +22,7 @@ export default function NewProduct() {
     const handleChange = e => {
         if (e.target.files[0]){
             setImage(e.target.files[0]);
-        }
-    }
+        }}
     async function handleNewProduct(e) {
         e.preventDefault()
         if(nameProd == null || nameProd.trim() == "" ){
@@ -41,8 +40,7 @@ export default function NewProduct() {
                 snapshot => {},//this basicaly indicate the current progress of file upload
                 error => {
                     console.log(error);
-                },
-                () => {
+                },() => {
                     storage
                         .ref("images")
                         .child(imgProdName)
@@ -63,9 +61,7 @@ export default function NewProduct() {
                             history.push('/profile')
                         })
                 })
-        }
-      
-    }
+        }}
     return(
         <div className="new-incident-container">
             <div className="content">

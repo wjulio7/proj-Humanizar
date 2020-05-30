@@ -5,11 +5,13 @@ const loginVendedorController = require('./controllers/loginVendedorController')
 const cadastroVendedorController = require('./controllers/cadastroVendedorController');
 const vendedorController = require('./controllers/vendedorController')
 
-const produtoController = require('./controllers/produtoController');
+
+const produtoController = require('./controllers/ProdutoController')
+
 const produtoClienteController = require('./controllers/produtoClienteController')
 
-const recuperarSenhaController = require('./controllers/recuperarSenhaController')
-routes.post('/recuperarsenhacontroller', recuperarSenhaController.alter)
+const alterarSenhaController = require('./controllers/alterarSenhaController')
+routes.post('/alterarsenhacontroller', alterarSenhaController.alter)
 
 routes.post('/cadastroVendedorController', cadastroVendedorController.create);
 
