@@ -104,6 +104,13 @@ export default function NewProduct() {
                         type="number"
                        value={value}
                        onChange={e=> setValue(e.target.value)} maxLength="9"/>
+                <Select className="Selection" options={options}
+                theme={customTheme}
+                onChange={e => setCategoriaProd(e.value)}
+                autoFocus
+                placeholder="Categoria do Produto"
+                isSearchable
+               />       
                 <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>
                 <button className="button" type="submit">Cadastrar</button>
             </form>
