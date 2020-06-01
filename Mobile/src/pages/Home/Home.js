@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { View, FlatList, Image, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
@@ -7,6 +7,7 @@ import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 import SearchableDropdown from 'react-native-searchable-dropdown';
 import Axios from 'axios';
+import { color } from 'react-native-reanimated';
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
@@ -66,17 +67,20 @@ export default function Home() {
         const optionsCat = [
        { name: 'Alimentos' },{ name: 'Eletrônicos' },
       { name: 'Informática' },{ name: 'Outros'},
-      { name: 'Serviços' },{ name: 'Utensílios' }, { name: 'Todos' }]
+      { name: 'Serviços' },{ name: 'Utensílios' }, { name: 'Categorias' }]
     return(
-        <View style={styles.container}>
+      
+        <ImageBackground source={require('../../../assets/background.jpg')}style={styles.container}>
+          
             <View style={styles.header}>
-            <Image source={logoImg} /> 
-                
+           {/* {<Image source={logoImg} /> } */}
+             <Text>Buscar por: </Text>
 
-                <SearchableDropdown
+                <SearchableDropdown 
                             items={ ufList}
                           onItemSelect={(item) => {
-                          setSelecteduf(item)}}
+                          setSelecteduf(item)
+                        }}
                           itemStyle={{
                             padding: 10,
                             marginTop: 2,
@@ -84,6 +88,7 @@ export default function Home() {
                             borderColor: '#bbb',
                             borderWidth: 1,
                             borderRadius: 5,
+                            fontColor:'#FFFF'
                           }}
                           textInputProps={{
                           placeholder: "UF",
@@ -91,8 +96,8 @@ export default function Home() {
                           style: {
                               padding: 12,
                               borderWidth: 1,
-                              borderColor: 'blue',
-                              borderRadius: 5},              
+                              borderColor: '#bddefd',
+                              borderRadius: 5,},             
                           }}
                           listProps={
                             {
@@ -103,16 +108,26 @@ export default function Home() {
                                 items={options2}
                               onItemSelect={(item) => {
                               setselectedCity(item)}}
+                              itemStyle={{
+                                padding: 10,
+                                marginTop: 2,
+                                width:150,
+                                backgroundColor: '#ddd',
+                                borderColor: '#bbb',
+                                borderWidth: 1,
+                                borderRadius: 5,
+                                
+                              }}
                                 textInputProps={{
                               placeholder: "Cidades",
                               underlineColorAndroid: "transparent",
                               style: {
                                   padding: 12,
                                   borderWidth: 1,
-                                  borderColor: 'blue',
+                                  borderColor: '#bddefd',
                                   borderRadius: 5},                              
                               }}/>
-               <SearchableDropdown
+               <SearchableDropdown 
                             items={ optionsCat}
                           onItemSelect={(item) => {
                           setSelectedCategoria(item)}}
@@ -123,16 +138,18 @@ export default function Home() {
                             borderColor: '#bbb',
                             borderWidth: 1,
                             borderRadius: 5,
+                            
                           }}
                           defaultIndex={6}
+                          
                           textInputProps={{
-                          placeholder: "Categoria",
+                          placeholder: "Categorias",
                           underlineColorAndroid: "transparent",  
                           style: {
                               padding: 12,
                               borderWidth: 1,
-                              borderColor: 'blue',
-                              borderRadius: 5},              
+                              borderColor: '#bddefd',
+                              borderRadius: 5},
                           }}
                           listProps={
                             {
@@ -170,6 +187,6 @@ export default function Home() {
 
         )}/>
 
-        </View>
+        </ImageBackground>
     )
 }

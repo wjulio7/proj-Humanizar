@@ -125,7 +125,8 @@ export default function Profile() {
                         <img src={produto.urlImgProd}/>
                         
                         <p>{produto.title}</p>
-                       
+                        <strong> Categoria</strong>
+                        <p>{produto.categoriaProd}</p>
                         <strong>Valor</strong>
                         <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(produto.value)}</p>
                         <strong>Contato do Vendedor</strong>

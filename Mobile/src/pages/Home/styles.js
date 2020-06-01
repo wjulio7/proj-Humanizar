@@ -1,12 +1,11 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 import Constans from 'expo-constants';
 
 export default StyleSheet.create({
    container:{
        flex:1,
        paddingHorizontal:20,
-       paddingTop: Constans.statusBarHeight +40,
-       backgroundColor: '#589eff'
+       paddingTop: Constans.statusBarHeight +30,
        
    },
 
@@ -14,7 +13,8 @@ export default StyleSheet.create({
        flexDirection: 'row',
        justifyContent: 'space-between',
        alignItems: 'center',
-       
+       height:100,
+       color:'#FFFF',
         
    },
    headerText:{
@@ -36,7 +36,7 @@ export default StyleSheet.create({
    },
 
    description: {
-       fontSize:16,
+       fontSize:10,
        lineHeight: 24,
         color: '#737380'
    },
@@ -55,9 +55,15 @@ export default StyleSheet.create({
    },
    incident:{
        padding:24,
-       borderRadius:8,
-       backgroundColor:'#e0f2fc',
+       backgroundColor:'#cfebfb',
+       marginTop:8,
        marginBottom:16,
+       borderRadius:20,
+       borderColor:'#bddefd',
+       borderStyle:"solid",
+       borderWidth:3,
+       resizeMode:'stretch',
+       alignContent:'center'
    },
    incidentProperty:{
        fontSize:14,
@@ -113,6 +119,9 @@ export default StyleSheet.create({
    tabLinkSeta:{
        left:112,
        bottom:5
-   }
-   
+   },
+   ImageFundo:{
+    width:15,
+    height:200
+   },
 });

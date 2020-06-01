@@ -1,7 +1,7 @@
 import React from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Linking,ImageBackground } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
 import logoImg from '../../assets/logo.png';
 
@@ -33,7 +33,7 @@ export default function DetailProd() {
       }    
     
     return(
-    <View style={styles.container}>
+    <ImageBackground source={require('../../../assets/background.jpg')}style={styles.container}>
        <View style={styles.header}>
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#E82041" />
@@ -82,7 +82,7 @@ export default function DetailProd() {
 
         </View>
         
-    </View>
+    </ImageBackground>
          
     )
 }

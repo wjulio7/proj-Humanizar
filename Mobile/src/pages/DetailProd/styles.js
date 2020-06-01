@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,ImageBackground } from 'react-native';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
@@ -6,35 +6,45 @@ export default StyleSheet.create({
       flex:2,
       paddingHorizontal:24,
       paddingTop: Constants.statusBarHeight +2,
-      backgroundColor: '#589eff'
+      backgroundColor: '#589eff',
+      
   },
     header:{
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      
   },
     incident:{
         padding:24,
         borderRadius:8,
         backgroundColor:'#e0f2fc',
         marginBottom:16,
+        
 },
     incidentProperty:{
     fontSize:14,
     color: '#41414d',
     fontWeight: 'bold',
     marginTop:4,
+    
 },
     incidentValue:{
     marginTop:0,
     fontSize:15,
     color:'#737380',
+    
 },
     contactBox:{
     padding:22,
     borderRadius:8,
-    backgroundColor:'#FFF',
+    backgroundColor:'#cfebfb',
     marginBottom: 5,
+    borderColor:'#bddefd',
+   borderStyle:"solid",
+   borderWidth:3,
+   resizeMode:'stretch',
+   alignContent:'center'
 },
     contactBox2:{
     height:180,
@@ -60,12 +70,17 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     action:{
-        backgroundColor: '#FFF',
+        backgroundColor: '#cfebfb',
         borderRadius: 8,
         height: 50,
         width: '48%',
         justifyContent:'center',
         alignItems:'center',
+        borderColor:'#bddefd',
+        borderStyle:"solid",
+        borderWidth:4,
+        resizeMode:'stretch',
+        alignContent:'center'
     },
     actionText:{
         fontSize:15,

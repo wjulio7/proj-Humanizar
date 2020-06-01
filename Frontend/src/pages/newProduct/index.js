@@ -110,8 +110,10 @@ export default function NewProduct() {
                 autoFocus
                 placeholder="Categoria do Produto"
                 isSearchable
-               />       
-                <input  placeholder="Foto" type="file"  accept="image/*"  onChange={handleChange}/>
+               />
+               <form>     
+                <input   className="fotoProd" id="fotoProd"  type="file"  accept="image/*"  onChange={handleChange}></input>
+                </form>  
                 <button className="button" type="submit">Cadastrar</button>
             </form>
         </div>
