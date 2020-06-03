@@ -36,7 +36,7 @@ export default function DetailProd() {
     <ImageBackground source={require('../../../assets/background.jpg')}style={styles.container}>
        <View style={styles.header}>
         <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="#E82041" />
+          <Feather name="arrow-left" size={28} color="blue" />
         </TouchableOpacity>
       </View>
         

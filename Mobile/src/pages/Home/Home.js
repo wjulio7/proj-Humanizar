@@ -180,7 +180,7 @@ export default function Home() {
               onPress={() => navigateToDetail(produto)}
             >
               <Text style={styles.tablink}>Ver mais detalhes</Text>
-              <Feather style={styles.tabLinkSeta}name="arrow-right" size={16} color="#E02041" />
+             
             </TouchableOpacity>
             
           </View>

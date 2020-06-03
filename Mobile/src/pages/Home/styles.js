@@ -114,7 +114,7 @@ export default StyleSheet.create({
    },
    tablink:{
     top:11,
-    color: '#13131a'
+    color: 'blue'
    },
    tabLinkSeta:{
        left:112,
