@@ -1,31 +1,22 @@
 .register-container{
-    width:100%;
-    max-width: 1120px;
-    height:100vh;
+    
     margin: 0 auto;
-
+    background-image: url("../../assets/background.jpg");
     display:flex;
     align-items: center;
     justify-content: center;
+    background: rgba(4, 8, 27, 0.753);
 }
 
 .register-container .content{
-    width: 100%;
-    padding: 96px;
-    background: #f0f0f51e;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.479);/* 0.1 é 10% de opacidade */ 
-    border-radius: 8px;
-    
-    display: flex;
-    justify-content: space-between;/*Bota um espaço entre as sections de posições opostas*/
-    align-items:center;
+   
 }
 
 .register-container .content section{
     width:100%;
     max-width: 380px;
-    max-width: 380px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+    
 }
 .register-container .content section img{
     margin-left: 40px;
@@ -36,13 +27,13 @@
 .register-container .content section h1{
     margin: 14px 0 22px;
     font-size: 42px;
-    color: rgba(0, 61, 116);
+    color:#ffffff;
     text-align: center;
 }
 
 .register-container .content p{/*estilizando paragrafo */
     font-size: 18px;
-    color: #003d74;
+    color: #9b9ba7;
     line-height: 32px;
     margin-left: 12px;
 }
@@ -69,17 +60,18 @@
 
 .register-container .content .input-group{
     display: flex;
-    max-width: 1640px;
+    max-width: 40px;
     height: 60px;
 }
 .register-container .content .input-group .Selection{
     max-Width: 100px;
     width: 100%;
-    max-Height: 80px;
+    max-Height: 20px;
     height: 100%;
     margin-top: 12px;
     margin-left: 0px;
     margin-right: 18px;
+    
    
 }
 
@@ -103,11 +95,7 @@
     margin-left: 18px;
 }
 .Desenvolvedores{
-    
-    width: 100%;
-    max-width: 100%;
-    max-height: 25%;
-    margin-top: 95px;
+    max-height: 12%;
     color: #003d74;
     text-align: center; 
 }

@@ -7,11 +7,11 @@ body{
     padding: 0 30px;
     margin: auto auto;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.479);/* 0.1 é 10% de opacidade */
-    background: #FFF;
+    background: rgba(4, 8, 27, 0.753);  
     max-height: 180px;
     height: 100%;
     border-radius: 20px;
-    border: 4px solid #003d74 
+    
     
 }
 
@@ -26,7 +26,7 @@ body{
     font-size: 20px;
     margin-top: 20px;
     margin-left: 24px;
-    color: #003d74;
+    color: #ffffff;
     
 }
 
@@ -37,7 +37,7 @@ body{
     margin-left: 38px;
     margin-top: 20px;
     border-style: solid;
-    border-color: #003d74;
+    border-color: #9b9ba7;
 }
 
 .profile-container header a{
@@ -63,8 +63,7 @@ body{
     max-height: 220px;
     border-radius: 22px;
     margin-left: 25px;
-    background-image: -webkit-linear-gradient(top, #246fb1, #003d74);
-    border: 2px solid #003d74;
+    background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
     margin-top: 60px;
    
 }
@@ -78,14 +77,14 @@ body{
     margin-bottom: 50px;
 }
 .profile-container section  .alterar{
-    background-image: -webkit-linear-gradient(top, #246fb1, #003d74);
+    background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
     border-radius: 22px;
     max-width: 70px;
     max-height: 100px;
     margin-left: 10px;
     width: 100%;
     border: none;
-    color: #FFF;
+    color: #003d74;
     box-shadow: -8px 5px 10px rgba(0, 0, 0, 0.479); 
 }
 .profile-container section .alterar:hover{
@@ -140,15 +139,14 @@ body{
 .foto::before {
   content: 'Alterar foto';
   display: inline-block;
-  background: linear-gradient(top, #246fb1, #003d74);
-  border: 1px solid #003d74;
+  color: #ffffff;
   border-radius: 13px;
   padding: 5px 8px;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
-  text-shadow: 1px 1px #fff;
+  text-shadow: 1px  #fff;
   font-size: 10pt;
   max-width: 100px;
   max-height: 70px;
@@ -179,12 +177,11 @@ body{
 }
 
 .profile-container ul li{
-    background: #FFF;
+    background: rgba(4, 8, 27, 0.753);
     padding: 24px;
     border-radius: 8px;
     position: relative;
     box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.479);/* 0.1 é 10% de opacidade */
-    border: 4px solid #003d74;  
 }
 
 .profile-container ul li button{
@@ -194,7 +191,7 @@ body{
     border-radius: 5px;
     box-shadow: -2px 1px 5px rgba(0, 0, 0, 0.479);
     border: 1px solid #8668d6;
-    background-image: -webkit-linear-gradient(top, #246fb1, #003d74);
+    background-image: -webkit-linear-gradient(top, #ffffff, #ffffff);
 }
 
 .profile-container ul li button:hover{
@@ -205,7 +202,7 @@ body{
 .profile-container ul li strong{
     display: flex;
     margin-bottom: 6px;
-    color: #41414d;
+    color: #ffffff;
     margin-left: 190px;
     
 }
@@ -216,7 +213,7 @@ body{
     width: 200px;
 }
 .profile-container ul li p{
-    color: black;
+    color: #9b9ba7;
     line-height: 21px;
     font-size: 16px;
     margin-left: 190px;
@@ -228,7 +225,7 @@ body{
     height: 170px;
     background-size: 100% 100%;
     float: left;
-    border: #003d74 5px;
+    border: #9b9ba7 3px;
     border-style: solid;
     border-radius: 5px;
     
@@ -238,7 +235,7 @@ body{
     height: 90%;
     max-width:600px;
     max-height: 300px;
-    color: black;
+    color: #9b9ba7;
     background-color:transparent; 
     font-style: normal;
     padding-bottom: 16px;

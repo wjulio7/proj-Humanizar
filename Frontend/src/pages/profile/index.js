@@ -111,7 +111,7 @@ export default function Profile() {
                 <img src={userUrl} width={100} height={100}/>
                 <span>Bem vindo <p><h4>{userName}</h4></p> </span>
                 <Link className="button" to="/newproduct">Cadastrar Produto</Link>
-            <button className="buttonPower"> <Link to="/"><FiPower size={18}  color="#FFF"/> </Link></button>  
+            <button className="buttonPower"> <Link to="/"><FiPower size={18}  color="#003d74"/> </Link></button>  
             </header>
             <section className="rec">
             <input  type="file" className="foto" accept="image/*"  onChange={handleChange}/>
@@ -139,7 +139,7 @@ export default function Profile() {
                         <textarea>{produto.description}</textarea>
                         
                         <button onClick={() => handleDeleteIncident(produto.id, produto.imgProdName) } type="button">
-                            <FiTrash2 size={20} color="#FFFF"/>
+                            <FiTrash2 size={20} color="#003d74"/>
                         </button>
                     </li>
                 ))}

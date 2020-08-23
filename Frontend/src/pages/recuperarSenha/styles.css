@@ -1,9 +1,8 @@
 .register-container{
     width:100%;
-    max-width: 1120px;
-    height:100vh;
-    margin: 0 auto;
-
+    max-width: 920px;
+    height:90vh;
+    margin: 20px auto 20px auto;/*Margin 0 auto faz com que o conteúdo fique centralizado*/
     display:flex;
     align-items: center;
     justify-content: center;
@@ -11,11 +10,8 @@
 
 .register-container .content{
     width: 100%;
-    padding: 96px;
-    background: #f0f0f51e;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.479);/* 0.1 é 10% de opacidade */ 
-    border-radius: 8px;
-    
+    padding-left: 46px;
+    padding-right: 46px;
     display: flex;
     justify-content: space-between;/*Bota um espaço entre as sections de posições opostas*/
     align-items:center;
@@ -25,7 +21,8 @@
     width:100%;
     max-width: 380px;
     max-width: 380px;
-    margin-bottom: 190px;
+    margin-bottom: 160px;
+    margin-right: 5px;
 }
 .register-container .content section img{
     margin-left: 40px;
@@ -36,21 +33,22 @@
 .register-container .content section h1{
     margin: 14px 0 22px;
     font-size: 42px;
-    color: rgba(0, 61, 116);
+    color: #ffffff;
     text-align: center;
 }
 
 .register-container .content p{/*estilizando paragrafo */
     font-size: 18px;
-    color: #003d74;
+    color: #9b9ba7;
     line-height: 32px;
-    margin-left: 24px;
+    margin-left: 44px;
 }
 
 .register-container .content form{
     width: 60%;
     height: 100%;
-    max-width: 450px; 
+    max-width: 450px;
+    padding-left: 15px; 
 }
 
 .register-container .content input{
@@ -76,7 +74,7 @@
     width: 100%;
     max-width: 100%;
     max-height: 25%;
-    margin-top: 95px;
+    margin-top: 25px;
     color: #003d74;
     text-align: center; 
 }

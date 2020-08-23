@@ -40,6 +40,7 @@ export default function Login() {
             <meta name="viewport" content="width=device-width"></meta>
         <div className="login-container">
             <section className="form">
+            
             <img src={logoImg} alt="logo" />
             <form onSubmit={handleLogin}>
                 <h1>Faça seu login</h1>
@@ -61,7 +62,7 @@ export default function Login() {
             </Link>
             </form>
             </section>
-            <img src={tendaImg} alt="Tenda"/>{/*Dentro de chaves a variável */}
+           
         </div>
         <footer className="Desenvolvedores">
             Desenvolvido por : Alexandro,Breno, Ronni, Túlius Alves e Wolgran Julio

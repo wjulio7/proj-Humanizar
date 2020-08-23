@@ -116,7 +116,7 @@ export default function Register() {
             <section>
             <img src={logoImg} alt="Barganhar" />
             <h1>Cadastro</h1>
-            <p>Realize aqui o seu cadastro como vendedor.</p>
+            <p>Realize seu cadastro como vendedor.</p>
             <Link className="back-link" to="/">{/*Chamando o estilo da class back-link*/}
                 <FiArrowLeft size={16} color="#E02041"/>
                 Não, já possuo cadastro

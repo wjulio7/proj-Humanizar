@@ -1,50 +1,47 @@
 .login-container{
     width:100%;/*largura*/
     max-width: 100%;/*Largura máxima */
-    height: 100vh;/* Altura */
-    margin: 0 auto;/*Margin 0 auto faz com que o conteúdo fique centralizado*/
-    
+    height: 40vh;/* Altura */
+    margin: 185px auto 175px auto;/*Margin 0 auto faz com que o conteúdo fique centralizado*/
     display:flex;/*Todos os ítens do container ficam lado a lado*/
     align-items: center;/*Alinha os ítens verticalmente ao centro */
     justify-content: center;/*Alinha os ítens horizontalmente ao centro */
-    
 }
-.login-container img{
-    border: 10px #ffffff;
-    max-width: 700px;
-    max-height: 900px;
-    margin-left: 50px;
-    
-}
+
 /*Formulário */
 .login-container section.form{/*delimitar tamanho*/
 width:70%;/*Largura */
-max-width: 350px;/* Largura máxima */
-
+max-width: 590px;/* Largura máxima */
+background: rgba(4, 8, 27, 0.753);
+max-height: 700px;
+position: relative;
 }
 .login-container section.form img{
     max-width: 400px;
-    max-height: 320px;
-    margin-left: 15px;
+    max-height: 200px;
+    margin-left: 190px;
    
 }
 /*Estilizar formulário*/
 .login-container section.form form{
-    margin-bottom: 200px;
+    margin-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    
 }
 /*Estilizar fonte e imagem */
 .login-container section.form form h1{
     font-size:  32px;
     margin-bottom: 12px;
     text-align: center;
-    color: #003d74;
+    color: #ffffff;
 }
 .Desenvolvedores{
     
     width: 100%;
     max-width: 100%;
     max-height: 25%;
-    margin-top: 100px;
-    color: #003d74;
+    margin-top: 200px;
+    color: #ffffff;
     text-align: center; 
 }
