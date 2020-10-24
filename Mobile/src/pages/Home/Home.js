@@ -74,7 +74,7 @@ export default function Home() {
           
             <View style={styles.header}>
            {/* {<Image source={logoImg} /> } */}
-             <Text>Buscar por: </Text>
+             <Text style={styles.TextBusca}>Buscar por: </Text>
 
                 <SearchableDropdown 
                             items={ ufList}
@@ -84,7 +84,7 @@ export default function Home() {
                           itemStyle={{
                             padding: 10,
                             marginTop: 2,
-                            backgroundColor: '#ddd',
+                            backgroundColor: '#ffffff',
                             borderColor: '#bbb',
                             borderWidth: 1,
                             borderRadius: 5,
@@ -96,7 +96,8 @@ export default function Home() {
                           style: {
                               padding: 12,
                               borderWidth: 1,
-                              borderColor: '#bddefd',
+                              borderColor: '#ffffff',
+                              color:'#ffffff',
                               borderRadius: 5,},             
                           }}
                           listProps={
@@ -111,8 +112,9 @@ export default function Home() {
                               itemStyle={{
                                 padding: 10,
                                 marginTop: 2,
-                                width:150,
-                                backgroundColor: '#ddd',
+                                width:80,
+                                right:4,
+                                backgroundColor: '#ffffff',
                                 borderColor: '#bbb',
                                 borderWidth: 1,
                                 borderRadius: 5,
@@ -123,8 +125,10 @@ export default function Home() {
                               underlineColorAndroid: "transparent",
                               style: {
                                   padding: 12,
+                                  right:1,
                                   borderWidth: 1,
-                                  borderColor: '#bddefd',
+                                  color:'#ffffff',
+                                  borderColor: '#ffffff',
                                   borderRadius: 5},                              
                               }}/>
                <SearchableDropdown 
@@ -134,7 +138,7 @@ export default function Home() {
                           itemStyle={{
                             padding: 10,
                             marginTop: 2,
-                            backgroundColor: '#ddd',
+                            backgroundColor: '#ffffff',
                             borderColor: '#bbb',
                             borderWidth: 1,
                             borderRadius: 5,
@@ -147,8 +151,10 @@ export default function Home() {
                           underlineColorAndroid: "transparent",  
                           style: {
                               padding: 12,
+                              right:5,
                               borderWidth: 1,
-                              borderColor: '#bddefd',
+                              borderColor: '#ffffff',
+                              color:'#ffffff',
                               borderRadius: 5},
                           }}
                           listProps={

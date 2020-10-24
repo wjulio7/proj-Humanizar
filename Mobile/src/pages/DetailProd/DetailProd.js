@@ -36,7 +36,7 @@ export default function DetailProd() {
     <ImageBackground source={require('../../../assets/background.jpg')}style={styles.container}>
        <View style={styles.header}>
         <TouchableOpacity onPress={navigateBack}>
-          <Feather name="arrow-left" size={28} color="blue" />
+          <Feather name="arrow-left" size={28} color="#000000" />
         </TouchableOpacity>
       </View>
         
@@ -62,7 +62,9 @@ export default function DetailProd() {
               <TextInput style={styles.incidentValue}
               multiline={true}
               numberOfLines={4}
-              style={{ height:100}}
+              style={{ height:100,
+                      color:'#ffffff'
+              }}
               > 
               {produto.description}</TextInput>
             </View>

@@ -24,7 +24,7 @@ export default StyleSheet.create({
 },
     incidentProperty:{
     fontSize:14,
-    color: '#41414d',
+    color:'#ffffff',
     fontWeight: 'bold',
     marginTop:4,
     
@@ -32,15 +32,17 @@ export default StyleSheet.create({
     incidentValue:{
     marginTop:0,
     fontSize:15,
-    color:'#737380',
-    
+    color:'#ffffff',
 },
+    incidentDescri:{
+    color:'#ffffff',
+    },
     contactBox:{
     padding:22,
     borderRadius:8,
-    backgroundColor:'#cfebfb',
+    backgroundColor:'rgba(4, 8, 27, 0.753)',
     marginBottom: 5,
-    borderColor:'#bddefd',
+    borderColor:'#ffffff',
    borderStyle:"solid",
    borderWidth:3,
    resizeMode:'stretch',
@@ -50,7 +52,7 @@ export default StyleSheet.create({
     height:180,
     width:190,
     left:90,
-    backgroundColor:'#13131a',
+    backgroundColor:'rgba(4, 8, 27, 0.753)',
 
 },
     weTitle: {
@@ -70,13 +72,13 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     action:{
-        backgroundColor: '#cfebfb',
+        backgroundColor: 'rgba(4, 8, 27, 0.753)',
         borderRadius: 8,
         height: 50,
         width: '48%',
         justifyContent:'center',
         alignItems:'center',
-        borderColor:'#bddefd',
+        borderColor:'#ffffff',
         borderStyle:"solid",
         borderWidth:4,
         resizeMode:'stretch',
@@ -85,12 +87,13 @@ export default StyleSheet.create({
     actionText:{
         fontSize:15,
         fontWeight: 'bold',
+        color:'#ffffff'
     },
     imgType:{
         height:85,
         width: 85,
         borderRadius:0 ,
-       borderColor:'#bddefd',
+       borderColor:'#ffffff',
        borderStyle:"solid",
        borderWidth:2,
        resizeMode:'center',

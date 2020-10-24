@@ -15,6 +15,10 @@ export default StyleSheet.create({
        alignItems: 'center',
        height:100,
        color:'#FFFF',
+       backgroundColor:'rgba(4, 8, 27, 0.753)',
+       borderColor:'#ffffff',
+       borderStyle:"solid",
+       borderWidth:2,
         
    },
    headerText:{
@@ -47,7 +51,7 @@ export default StyleSheet.create({
        height:50,
        width:50,
     borderRadius:70,
-   borderColor:'#bddefd',
+   borderColor:'#ffffff',
    borderStyle:"solid",
    borderWidth:2,
    resizeMode:'stretch',
@@ -55,19 +59,19 @@ export default StyleSheet.create({
    },
    incident:{
        padding:24,
-       backgroundColor:'#cfebfb',
+       backgroundColor:'rgba(4, 8, 27, 0.753)',
        marginTop:8,
        marginBottom:16,
        borderRadius:20,
-       borderColor:'#bddefd',
+       borderColor:'#ffffff',
        borderStyle:"solid",
-       borderWidth:3,
+       borderWidth:0,
        resizeMode:'stretch',
        alignContent:'center'
    },
    incidentProperty:{
        fontSize:14,
-       color: '#41414d',
+       color: '#ffffff',
        fontWeight: 'bold',
        marginTop:5,
        marginBottom:3
@@ -76,7 +80,7 @@ export default StyleSheet.create({
        marginTop:8,
        fontSize:15,
        marginBottom:24,
-       color:'#737380'
+       color:'#ffffff'
    },
    detailsButton:{
        flexDirection:'row',
@@ -84,7 +88,7 @@ export default StyleSheet.create({
        alignItems:'center'
    },
    detailsButtonText:{
-       color:'#e02041',
+       color:'#ffffff',
        fontSize:15,
        fontWeight: 'bold'
    },
@@ -92,7 +96,7 @@ export default StyleSheet.create({
     height:150,
     width:280,
     borderRadius:0 ,
-   borderColor:'#bddefd',
+   borderColor:'#ffffff',
    borderStyle:"solid",
    borderWidth:2,
    resizeMode:'center',
@@ -101,7 +105,7 @@ export default StyleSheet.create({
     fontSize:14,
     width:120,
     height:200,
-    color: '#41414d',
+    color: '#ffffff',
     position:'absolute',
     right:15,
     top:105
@@ -110,11 +114,11 @@ export default StyleSheet.create({
        fontWeight:'bold',
        top:9,
        width:165,
-       color: '#13131a'
+       color: '#ffffff'
    },
    tablink:{
     top:11,
-    color: 'blue'
+    color: '#ffffff'
    },
    tabLinkSeta:{
        left:112,
@@ -123,5 +127,9 @@ export default StyleSheet.create({
    ImageFundo:{
     width:15,
     height:200
+   },
+   TextBusca:{
+    color:'#ffffff',
+    left:5
    },
 });
