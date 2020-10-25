@@ -15,6 +15,7 @@ export default StyleSheet.create({
        alignItems: 'center',
        height:100,
        color:'#FFFF',
+       borderRadius:17,
        backgroundColor:'rgba(4, 8, 27, 0.753)',
        borderColor:'#ffffff',
        borderStyle:"solid",
