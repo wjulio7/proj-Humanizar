@@ -21,11 +21,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React Native](https://reactnative.dev/)
 
 [<img src="https://avatars.githubusercontent.com/u/54107302?s=460&v=4" width=115 > <br> <sub> Diana Regina </sub>](https://github.com/RonniSouza) |
-| :---: |  
-
-[<img src="https://avatars.githubusercontent.com/u/50600361?s=460&u=2654d65050d99f52a21b719a4667c427eee3b5a0&v=4" width=115 > <br> <sub> Tulius Alves </sub>](https://github.com/tuliusalves) |
+| :---: |  [<img src="https://avatars.githubusercontent.com/u/50600361?s=460&u=2654d65050d99f52a21b719a4667c427eee3b5a0&v=4" width=115 > <br> <sub> Tulius Alves </sub>](https://github.com/tuliusalves) |
+| :---: | [<img src="https://avatars.githubusercontent.com/u/50637351?s=460&v=4" width=115 > <br> <sub> Wolgran Julio </sub>](https://github.com/wjulio7) |
 | :---: |
 
-[<img src="https://avatars.githubusercontent.com/u/50637351?s=460&v=4" width=115 > <br> <sub> Wolgran Julio </sub>](https://github.com/wjulio7) |
-| :---: |
+
+
+
 
